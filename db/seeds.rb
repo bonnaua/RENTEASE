@@ -103,7 +103,6 @@ require 'uri'
 #                     end_date: Date.new(2018,12,31))
 # p "#{Rent.count} rents created"
 
-
 ### RENTERS ###
 
 p "destroying renters"
