@@ -1,5 +1,5 @@
 class Expense < ApplicationRecord
   belongs_to :housing
 
-  validates :name, :category, :amount, :frequency, presence: true
+  validates :name, :category, :amount, presence: true
 end

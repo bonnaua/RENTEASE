@@ -1,0 +1,8 @@
+<h1> <%= "MY RENTERS" %></h1>
+
+<% @renters.each do |renter| %>
+    <h3><%= renter.first_name %> <%= renter.last_name %> </h3>
+    <p><%= renter.description %></p>
+    <p><%=renter.phone_number%></p>
+    <p><%=renter.email%></p>
+<% end %>

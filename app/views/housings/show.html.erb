@@ -1,0 +1,13 @@
+<div>
+  <% if @housing.photo.attached? %>
+    <%= cl_image_tag @housing.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <div>
+    <h1><%= @housing.name %></h1>
+    <p><%= @housing.address %></p>
+    <p><%= @housing.nb_rooms %></p>
+    <p><%= "#{@housing.surface}m2" %></p>
+    <p><%= @housing.category %></p>
+    <p><%= @housing.status %></p>
+  </div>
+</div>
