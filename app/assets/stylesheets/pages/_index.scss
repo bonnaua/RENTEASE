@@ -1,2 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body {
+  background-color: $blanc-1;
+}
+
+h1 {
+  font-weight: bold;
+}

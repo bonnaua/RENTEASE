@@ -1,0 +1,16 @@
+.btn-signup-form {
+  border: 4px solid $flash;
+  text-align:center;
+  font-size: 16px;
+  border-radius: 38px;
+  color: $noir !important;
+  padding: 15px 32px;
+  width: 100%;
+  opacity: 0.8;
+  width: 100%;
+}
+.btn-signup-form:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $flash !important;
+}
