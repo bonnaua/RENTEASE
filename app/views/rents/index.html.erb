@@ -1,0 +1,12 @@
+<h1><%= "MY RENTS" %></h1>
+
+<% @rents.each do |rent| %>
+    <h3><%= rent.name %></h3>
+    <p><%= rent.species %></p>
+    <p><%=rent.amount%></p>
+    <p><%=rent.status%></p>
+    <p><%=rent.name%></p>
+    <p><%=rent.start_date%></p>
+    <p><%=rent.end_date%></p>
+
+<% end %>
