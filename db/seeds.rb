@@ -65,7 +65,7 @@ housing11 = Housing.create!(name:'Furnished family appartment Turenne', address:
 housing11.photo.attach(io: URI.open('https://i.pinimg.com/564x/82/3e/ee/823eee77043a53dcbcfca31fd61a803a.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
 housing11.save!
 
-housing12 = Housing.create!(name:'6-room appartment with balconie Paris 4th', address:'6 Rue le Regrattier, 75004 Paris', description:'Located on the 2nd floor of an upscale building with an elevator. It features an entrance, a double living room with a long balcony, a fitted and equipped separate kitchen, a master suite with a private bathroom/toilet and a walk-in closet, 2 additional bedrooms, an office or 4th bedroom, a shower room and a separate lavatory.', nb_rooms: 6, surface: 153, user: youri, category: '', status: '')
+housing12 = Housing.create!(name:'6-room appartment with balcony Paris 4th', address:'6 Rue le Regrattier, 75004 Paris', description:'Located on the 2nd floor of an upscale building with an elevator. It features an entrance, a double living room with a long balcony, a fitted and equipped separate kitchen, a master suite with a private bathroom/toilet and a walk-in closet, 2 additional bedrooms, an office or 4th bedroom, a shower room and a separate lavatory.', nb_rooms: 6, surface: 153, user: youri, category: '', status: '')
 housing12.photo.attach(io: URI.open('https://i.pinimg.com/564x/e4/7a/81/e47a814a690b1914c0685651868a8b90.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
 housing12.save!
 

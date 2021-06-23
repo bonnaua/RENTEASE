@@ -1,0 +1,21 @@
+<div>
+  <h2>Edit a housing</h2>
+  <br>
+  <%= simple_form_for(@housing) do |f| %>
+    <div>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :nb_rooms %>
+    <%= f.input :surface %>
+    <%= f.label :category %>
+    <%= f.select :category, [] %>
+    <%= f.label :status %>
+    <%= f.select :status, [] %>
+    <%= f.input :photo, as: :file %>
+    </div>
+    <div>
+      <%= f.button :submit, "Edit my housing"%>
+    </div>
+  <% end %>
+</div>
