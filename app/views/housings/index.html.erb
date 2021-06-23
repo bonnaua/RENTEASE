@@ -1,1 +1,77 @@
 <h1><%= "MY HOUSES" %></h1>
+<div class="container">
+  <div class="search-bar-position">
+    <div>
+      <div>
+        <div class="search">
+          <%= form_tag housings_path, method: :get, class: 'w-100' do %>
+            <div class="input-container">
+              <%= text_field_tag :query,
+                   params[:query],
+                   class: "search__input w-100",
+                   placeholder: "Search for housings here..."
+                 %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <br>
+      <div class="no-result-text">
+        <% if @housings_search.size === 0 %>
+          <%= "No result found."  if params[:query].present?%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="housing-grid"> <!-- add grid class here -->
+    <% if @housings_search.size === 0 %>
+      <% @housings.each do |housing| %>
+        <% if housing.user == current_user %>
+          <%= link_to housing_path(housing) do %>
+            <div class="card-housing">
+              <% if housing.photo.attached? %>
+                <%= cl_image_tag housing.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <div class="card-housing-infos">
+                <div>
+                  <h3><%= housing.name %></h3>
+                  <p><%= housing.address %></p>
+                </div>
+                <div>
+                  <p><%= "#{housing.nb_rooms} rooms" %></p>
+                  <p><%= "#{housing.surface}m2" %></p>
+                </div>
+                <p><%= housing.category %></p>
+                <p><%= housing.status %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% @housings_search.each do |housing| %>
+        <% if housing.user == current_user %>
+          <%= link_to housing_path(housing) do %>
+            <div class="card-housing">
+              <% if housing.photo.attached? %>
+                <%= cl_image_tag housing.photo.key, height: 300, width: 400, crop: :fill %>
+              <% end %>
+              <div class="card-housing-infos">
+                <div>
+                  <h3><%= housing.name %></h3>
+                  <p><%= housing.address %></p>
+                </div>
+                <div>
+                  <p><%= "#{housing.nb_rooms} rooms" %></p>
+                  <p><%= "#{housing.surface}m2" %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

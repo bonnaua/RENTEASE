@@ -7,4 +7,11 @@ class Housing < ApplicationRecord
   has_one_attached :photo
 
   validates :name, :address, :nb_rooms, :surface, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [:name, :address, :category, :description],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

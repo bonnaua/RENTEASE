@@ -5,7 +5,6 @@ class RentersController < ApplicationController
     @renters = Renter.all
   end
 
-
   def show
   end
 

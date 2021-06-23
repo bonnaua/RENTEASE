@@ -2,6 +2,12 @@ class HousingsController < ApplicationController
   before_action :set_housing, only: [:show, :destroy, :edit, :update]
 
   def index
+    #search bar
+    @housings_search = []
+    if params[:query].present?
+      @housings_search = Housing.global_search(params[:query])
+    end
+
     @housings = Housing.all
   end
 
