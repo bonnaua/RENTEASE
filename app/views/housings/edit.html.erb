@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <h2>Edit a housing</h2>
   <br>
   <%= simple_form_for(@housing) do |f| %>
@@ -15,7 +15,7 @@
     <%= f.input :photo, as: :file %>
     </div>
     <div>
-      <%= f.button :submit, "Edit my housing"%>
+      <%= f.button :submit, "Update my house"%>
     </div>
   <% end %>
 </div>
