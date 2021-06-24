@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :rents
 
+  resources :expenses
 
 
   require "sidekiq/web"

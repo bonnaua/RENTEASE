@@ -1,0 +1,39 @@
+
+.container-table {
+  display:flex;
+  justify-content: center;
+}
+.expense-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    justify-content: center;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width : 80%;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.expense-table tr th {
+    background-color: $flash;
+    color: $noir ;
+    text-align: center;
+}
+
+
+.expense-table th,
+.expense-table td {
+    padding: 12px 15px;
+}
+
+.expense-table tbody tr {
+    border-bottom: 1px solid $blanc-1;
+}
+
+.expense-table tbody tr:nth-of-type(even) {
+    background-color: $blanc-1;
+}
+
+.expense-table tbody tr:last-of-type {
+    border-bottom: 2px solid $flash;
+}
