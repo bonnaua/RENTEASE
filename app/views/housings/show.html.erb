@@ -1,6 +1,11 @@
 <div class="container">
   <div class="card-housing-show">
-    <h3><%= @housing.name %></h3>
+    <div class="title-position">
+      <h3><%= @housing.name %></h3>
+      <div class="btn-outline">
+        <%= link_to "Edit", edit_housing_path(@housing) %>
+      </div>
+    </div>
     <% if @housing.photo.attached? %>
       <%= cl_image_tag @housing.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
