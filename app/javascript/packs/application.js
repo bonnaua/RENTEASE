@@ -25,6 +25,8 @@ require("channels")
 // External imports
 import "bootstrap";
 
+import { dragElement } from '../components/searchbar';
+
 // Internal imports, e.g:
 import { initSelect2 } from '../plugins/init_select2';
 import {selectHousings} from '../plugins/select_expense';

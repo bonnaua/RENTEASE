@@ -1,4 +1,5 @@
 <h1><%= "MY HOUSES" %></h1>
+<!-- search bar -->
 <div class="container">
   <div class="search-bar-position">
     <div>
@@ -24,7 +25,10 @@
     </div>
   </div>
 
-  <div class="housing-grid"> <!-- add grid class here -->
+<!-- cards grid with condition on search bar results -->
+<!-- only the current_user housings are listed -->
+
+  <div class="housing-grid">
     <% if @housings_search.size === 0 %>
       <% @housings.each do |housing| %>
         <% if housing.user == current_user %>

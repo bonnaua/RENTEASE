@@ -2,13 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :housings
+  resources :housings do
+    resources :contracts, only: [:index]
+  end
 
   resources :renters
 
   resources :rents
 
   resources :expenses
+
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
