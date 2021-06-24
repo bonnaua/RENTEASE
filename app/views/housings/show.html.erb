@@ -11,3 +11,16 @@
     <p><%= @housing.status %></p>
   </div>
 </div>
+
+<div>
+  <% @housing.contracts.each do |contract| %>
+    <h1><%= "Contract #{contract.id}" %></h1>
+    <p><%= "#{contract.start_date} - #{contract.end_date}" %></p>
+    <p><%= contract.rent_due_date %></p>
+    <p><%= "Rent: #{contract.rent}" %></p>
+    <p><%= "Rental Expenses: #{contract.rental_expenses}" %></p>
+    <p><%= "Total: #{contract.rent + contract.rental_expenses}" %></p>
+  <% end %>
+</div>
+
+
