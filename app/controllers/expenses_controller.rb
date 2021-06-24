@@ -7,7 +7,8 @@ class ExpensesController < ApplicationController
       @expenses_search = Expense.global_search(params[:query])
     end
 
-    @expenses = Expense.all
+    @expenses = Expense.joins(:housing).where(housings: { user: current_user })
+    @housings = Housing.where(user: current_user)
   end
 
   def show
