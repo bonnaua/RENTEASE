@@ -107,6 +107,7 @@ Housing.all.each do |housing|
   amount_reno = (1000..10000).step(500).to_a.sample
   amount_taxe_fonc = (500..6000).step(5).to_a.sample
   amount_copro = (80..300).to_a.sample
+
   months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
   years = [2016,2017,2018,2019]
   trimester = [1, 2, 3, 4]
