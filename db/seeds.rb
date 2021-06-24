@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'uri'
+require 'date'
 
 p "destroying users"
 User.destroy_all
@@ -103,14 +104,44 @@ Expense.destroy_all
 p "Expenses destroyed"
 
 Housing.all.each do |housing|
-  amount = [80, 120, 45, 90, 20].sample
+  amount_CC = (30..120).step(10).to_a.sample
+  amount_reno = (1000..10000).step(500).to_a.sample
+  amount_taxe_fonc = (500..6000).step(5).to_a.sample
+  amount_copro = (80..300).to_a.sample
+
   months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
   years = [2016,2017,2018,2019]
-  counter  = 0
-  (1..47).to_a.sample.times do
-    Expense.create!(name: "Charges locatives #{months[counter%12]} #{years[counter/12]}"  , category:'Charges locatives' , amount: amount, housing: housing)
-    counter += 1
+  trimester = [1, 2, 3, 4]
+  counter_month  = 0
+  counter_trimester = 0
+  periodicity = (1..47).to_a.sample
+  periodicity.times do
+    Expense.create!(name: "Taxes foncières #{years[counter_month/12]}"  , category:'Taxes foncières' , amount: amount_taxe_fonc, housing: housing) if counter_month % 12 == 0
+    Expense.create!(name: "Charges locatives #{months[counter_month%12]} #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing)
+    counter_month += 1
   end
+  nb_trimester = periodicity /3
+  year_number = 2016
+  trimestre_numero = 1
+  nb_trimester.times do |i|
+    i += 1
+    Expense.create!(name: "Charge copropriété trimestre #{trimestre_numero} #{year_number}"  , category:'Charges copropriété' , amount: amount_copro, housing: housing)
+    (trimestre_numero%4==0) ? trimestre_numero = 1 : trimestre_numero +=1
+    year_number += 1 if i%4 == 0
+    counter_trimester += 1
+  end
+
+  ## CHARGES PONCTUELLES ##
+  (0..1).to_a.sample.times do
+    Expense.create!(name: "Rénovation exceptionnelle cuisine"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+  end
+  (0..1).to_a.sample.times do
+    Expense.create!(name: "Rénovation exceptionnelle isolation"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+  end
+  (0..1).to_a.sample.times do
+    Expense.create!(name: "Rénovation exceptionnelle ballon d'eau chaude"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+  end
+
 end
 
 p "#{Expense.count} expenses created"
@@ -191,3 +222,72 @@ gregoire.save!
 
 
 p "#{Renter.count} renters created"
+
+
+### CONTRACTS ###
+
+p "destroying contracts"
+Contract.destroy_all
+p "contracts destroyed"
+
+#AUDREY
+
+contract1 = Contract.create!(housing: housing1, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 800, rental_expenses: 100)
+
+contract2 = Contract.create!(housing: housing1, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 830, rental_expenses: 100)
+
+contract3 = Contract.create!(housing: housing2, start_date: Date.new(2016,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1000, rental_expenses: 150)
+
+contract4 = Contract.create!(housing: housing3, start_date: Date.new(2016,01,01), end_date: Date.new(2017,06,30), rent_due_date: Date.new(2016,01,01),  rent: 1300, rental_expenses: 50)
+
+contract5 = Contract.create!(housing: housing3, start_date: Date.new(2017,07,01), end_date: Date.new(2018,12,31), rent_due_date: Date.new(2017,07,01),  rent: 1300, rental_expenses: 50)
+
+contract6 = Contract.create!(housing: housing3, start_date: Date.new(2019,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2019,07,01),  rent: 1300, rental_expenses: 50)
+
+contract7 = Contract.create!(housing: housing4, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1200, rental_expenses: 200)
+
+contract8 = Contract.create!(housing: housing4, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 1250, rental_expenses: 200)
+
+
+#AYMERIC
+
+contract9 = Contract.create!(housing: housing5, start_date: Date.new(2016,01,01), end_date: Date.new(2018,06,30), rent_due_date: Date.new(2016,01,01),  rent: 2000, rental_expenses: 200)
+
+contract10 = Contract.create!(housing: housing5, start_date: Date.new(2018,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,07,01),  rent: 2000, rental_expenses: 250)
+
+contract11 = Contract.create!(housing: housing6, start_date: Date.new(2016,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1600, rental_expenses: 50)
+
+contract12 = Contract.create!(housing: housing7, start_date: Date.new(2016,01,01), end_date: Date.new(2016,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1000, rental_expenses: 250)
+
+contract13 = Contract.create!(housing: housing7, start_date: Date.new(2017,01,01), end_date: Date.new(2018,12,31), rent_due_date: Date.new(2017,01,01),  rent: 1000, rental_expenses: 250)
+
+contract14 = Contract.create!(housing: housing7, start_date: Date.new(2019,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2019,01,01),  rent: 1000, rental_expenses: 250)
+
+contract15 = Contract.create!(housing: housing8, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 990, rental_expenses: 10)
+
+contract16 = Contract.create!(housing: housing8, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 990, rental_expenses: 10)
+
+
+#YOURI
+
+contract16 = Contract.create!(housing: housing9, start_date: Date.new(2016,01,01), end_date: Date.new(2016,06,30), rent_due_date: Date.new(2016,01,01),  rent: 2000, rental_expenses: 100)
+
+contract17 = Contract.create!(housing: housing9, start_date: Date.new(2016,07,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,07,01),  rent: 2000, rental_expenses: 100)
+
+contract18 = Contract.create!(housing: housing9, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 2000, rental_expenses: 100)
+
+contract19 = Contract.create!(housing: housing10, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1800, rental_expenses: 100)
+
+contract20 = Contract.create!(housing: housing10, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 1800, rental_expenses: 100)
+
+contract21 = Contract.create!(housing: housing11, start_date: Date.new(2016,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2016,01,01),  rent: 4000, rental_expenses: 500)
+
+contract22 = Contract.create!(housing: housing12, start_date: Date.new(2016,01,01), end_date: Date.new(2016,06,30), rent_due_date: Date.new(2016,01,01),  rent: 3100, rental_expenses: 150)
+
+contract23 = Contract.create!(housing: housing12, start_date: Date.new(2016,07,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,07,01),  rent: 3100, rental_expenses: 150)
+
+contract24 = Contract.create!(housing: housing12, start_date: Date.new(2018,01,01), end_date: Date.new(2018,06,30), rent_due_date: Date.new(2018,01,01),  rent: 3100, rental_expenses: 150)
+
+contract25 = Contract.create!(housing: housing12, start_date: Date.new(2018,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,07,01),  rent: 3100, rental_expenses: 150)
+
+p "#{Contract.count} contracts created"
