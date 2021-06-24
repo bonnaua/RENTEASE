@@ -1,9 +1,22 @@
-<h1> <%= "MY RENTERS" %></h1>
+<h1> MY RENTERS </h1>
 
-<% @renters.each do |renter| %>
-    <h3><%= renter.first_name %> <%= renter.last_name %> </h3>
-    <p><%= renter.description %></p>
-    <p><%=renter.phone_number%></p>
-    <p><%=renter.email%></p>
-<% end %>
 
+
+<div class="container">
+  <div class="renter-grid">
+    <% current_user.get_renters.each do |renter| %>
+      <div class="card-renter">
+        <div>
+          <h3><%= renter.first_name %> <%= renter.last_name %> </h3>
+        </div>
+        <div>
+        <p><%= renter.description %></p>
+        </div>
+        <div>
+        <p><%=renter.phone_number%></p>
+        <p><%=renter.email%></p>
+        </div>
+      </div>
+  <% end %>
+  </div>
+</div>
