@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :rents
 
+  resources :expenses
+
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
