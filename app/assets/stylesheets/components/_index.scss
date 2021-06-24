@@ -6,3 +6,11 @@
 @import "button";
 @import "searchbar";
 @import "card";
+
+.title-position {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
