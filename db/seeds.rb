@@ -103,14 +103,42 @@ Expense.destroy_all
 p "Expenses destroyed"
 
 Housing.all.each do |housing|
-  amount = [80, 120, 45, 90, 20].sample
+  amount_CC = (30..120).step(10).to_a.sample
+  amount_reno = (1000..10000).step(500).to_a.sample
+
   months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
   years = [2016,2017,2018,2019]
-  counter  = 0
-  (1..47).to_a.sample.times do
-    Expense.create!(name: "Charges locatives #{months[counter%12]} #{years[counter/12]}"  , category:'Charges locatives' , amount: amount, housing: housing)
-    counter += 1
+  trimester = [1, 2, 3, 4]
+  counter_month  = 0
+  counter_trimester = 0
+  periodicity = (1..47).to_a.sample
+  periodicity.times do
+    Expense.create!(name: "Charges locatives #{months[counter_month%12]} #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing)
+    Expense.create!(name: "Taxes foncières #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing) if counter_month % 12 == 0
+    counter_month += 1
   end
+  nb_trimester = periodicity /3
+  year_number = 2016
+  trimestre_numero = 1
+  nb_trimester.times do |i|
+    i += 1
+    Expense.create!(name: "Charge copropriété trimestre #{trimestre_numero} #{year_number}"  , category:'Charges copropriété' , amount: amount_CC, housing: housing)
+    (trimestre_numero%4==0) ? trimestre_numero = 1 : trimestre_numero +=1
+    year_number += 1 if i%4 == 0
+    counter_trimester += 1
+  end
+
+  ## CHARGES PONCTUELLES ##
+  (0..1).to_a.sample.times do
+    Expense.create!(name: "Rénovation exceptionnelle cuisine"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+  end
+  (0..1).to_a.sample.times do
+    Expense.create!(name: "Rénovation exceptionnelle isolation"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+  end
+  (0..1).to_a.sample.times do
+    Expense.create!(name: "Rénovation exceptionnelle ballon d'eau chaude"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+  end
+
 end
 
 p "#{Expense.count} expenses created"
