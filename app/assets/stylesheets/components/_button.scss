@@ -14,3 +14,18 @@
   text-decoration: none;
   color: $flash !important;
 }
+
+.btn-outline {
+  color: $gris;
+  border: 1px solid $gris;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  align-items: center;
+}
+
+.btn-outline:hover {
+  opacity: 1;
+}
