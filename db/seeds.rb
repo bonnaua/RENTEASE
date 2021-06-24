@@ -105,7 +105,8 @@ p "Expenses destroyed"
 Housing.all.each do |housing|
   amount_CC = (30..120).step(10).to_a.sample
   amount_reno = (1000..10000).step(500).to_a.sample
-
+  amount_taxe_fonc = (500..6000).step(5).to_a.sample
+  amount_copro = (80..300).to_a.sample
   months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
   years = [2016,2017,2018,2019]
   trimester = [1, 2, 3, 4]
@@ -113,8 +114,8 @@ Housing.all.each do |housing|
   counter_trimester = 0
   periodicity = (1..47).to_a.sample
   periodicity.times do
+    Expense.create!(name: "Taxes foncières #{years[counter_month/12]}"  , category:'Taxes foncières' , amount: amount_taxe_fonc, housing: housing) if counter_month % 12 == 0
     Expense.create!(name: "Charges locatives #{months[counter_month%12]} #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing)
-    Expense.create!(name: "Taxes foncières #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing) if counter_month % 12 == 0
     counter_month += 1
   end
   nb_trimester = periodicity /3
@@ -122,7 +123,7 @@ Housing.all.each do |housing|
   trimestre_numero = 1
   nb_trimester.times do |i|
     i += 1
-    Expense.create!(name: "Charge copropriété trimestre #{trimestre_numero} #{year_number}"  , category:'Charges copropriété' , amount: amount_CC, housing: housing)
+    Expense.create!(name: "Charge copropriété trimestre #{trimestre_numero} #{year_number}"  , category:'Charges copropriété' , amount: amount_copro, housing: housing)
     (trimestre_numero%4==0) ? trimestre_numero = 1 : trimestre_numero +=1
     year_number += 1 if i%4 == 0
     counter_trimester += 1
