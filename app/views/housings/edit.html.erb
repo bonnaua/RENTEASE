@@ -9,9 +9,9 @@
     <%= f.input :nb_rooms %>
     <%= f.input :surface %>
     <%= f.label :category %>
-    <%= f.select :category, [] %>
+    <%= f.select :category, ["Appartement", "Maison", "Loft", "Atelier", "Duplex", "Chambre"] %>
     <%= f.label :status %>
-    <%= f.select :status, [] %>
+    <%= f.select :status, ["Loué", "Disponible", "Indisponible"] %>
     <%= f.input :photo, as: :file %>
     </div>
     <div>
