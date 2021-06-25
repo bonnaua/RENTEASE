@@ -235,6 +235,7 @@ p "#{Renter.count} renters created"
 p "destroying contracts"
 Contract.destroy_all
 p "contracts destroyed"
+p "renter_contracts destroyed"
 
 #AYMERIC
 
@@ -253,6 +254,23 @@ contract6 = Contract.create!(housing: housing3, start_date: Date.new(2019,07,01)
 contract7 = Contract.create!(housing: housing4, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1200, rental_expenses: 200)
 
 contract8 = Contract.create!(housing: housing4, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 1250, rental_expenses: 200)
+
+renter_contract1 = RenterContract.create!(renter_id: capucine.id, contract_id: contract1.id )
+
+renter_contract2 = RenterContract.create!(renter_id: benjamine.id, contract_id: contract2.id )
+
+renter_contract3 = RenterContract.create!(renter_id: gregoire.id, contract_id: contract3.id )
+
+renter_contract4 = RenterContract.create!(renter_id: louise.id, contract_id: contract4.id )
+
+renter_contract5 = RenterContract.create!(renter_id: henri.id, contract_id: contract5.id )
+
+renter_contract6 = RenterContract.create!(renter_id: hugo.id, contract_id: contract6.id )
+
+renter_contract7 = RenterContract.create!(renter_id: charlotte.id, contract_id: contract7.id )
+
+renter_contract8 = RenterContract.create!(renter_id: maxence.id, contract_id: contract8.id )
+
 
 
 #AUDREY
@@ -274,6 +292,20 @@ contract15 = Contract.create!(housing: housing8, start_date: Date.new(2016,01,01
 contract16 = Contract.create!(housing: housing8, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 990, rental_expenses: 10)
 
 renter_contract9 = RenterContract.create!(renter_id: capucine.id, contract_id: contract9.id )
+
+renter_contract10 = RenterContract.create!(renter_id: theotime.id, contract_id: contract10.id )
+
+renter_contract11 = RenterContract.create!(renter_id: caroline.id, contract_id: contract11.id )
+
+renter_contract12 = RenterContract.create!(renter_id: allan.id, contract_id: contract12.id )
+
+renter_contract13 = RenterContract.create!(renter_id: henri.id, contract_id: contract13.id )
+
+renter_contract14 = RenterContract.create!(renter_id: hugo.id, contract_id: contract14.id )
+
+renter_contract15 = RenterContract.create!(renter_id: charlotte.id, contract_id: contract15.id )
+
+renter_contract16 = RenterContract.create!(renter_id: maxence.id, contract_id: contract16.id )
 
 #YOURI
 
@@ -297,4 +329,26 @@ contract24 = Contract.create!(housing: housing12, start_date: Date.new(2018,01,0
 
 contract25 = Contract.create!(housing: housing12, start_date: Date.new(2018,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,07,01),  rent: 3100, rental_expenses: 150)
 
+renter_contract16 = RenterContract.create!(renter_id: capucine.id, contract_id: contract16.id )
+
+renter_contract17 = RenterContract.create!(renter_id: benjamine.id, contract_id: contract17.id )
+
+renter_contract18 = RenterContract.create!(renter_id: gregoire.id, contract_id: contract18.id )
+
+renter_contract19 = RenterContract.create!(renter_id: louise.id, contract_id: contract19.id )
+
+renter_contract20 = RenterContract.create!(renter_id: henri.id, contract_id: contract20.id )
+
+renter_contract21 = RenterContract.create!(renter_id: hugo.id, contract_id: contract21.id )
+
+renter_contract22 = RenterContract.create!(renter_id: allan.id, contract_id: contract22.id )
+
+renter_contract23 = RenterContract.create!(renter_id: theotime.id, contract_id: contract23.id )
+
+renter_contract24 = RenterContract.create!(renter_id: hugo.id, contract_id: contract24.id )
+
+renter_contract25 = RenterContract.create!(renter_id: charlotte.id, contract_id: contract25.id )
+
+
+p "#{RenterContract.count} renter_contracts created"
 p "#{Contract.count} contracts created"
