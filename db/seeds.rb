@@ -20,25 +20,25 @@ p "users destroyed"
 
 ### USER ###
 youri = User.create!(first_name: 'Youri', last_name: "MG", email:'youri@email.com', password:'123456')
-youri.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
-youri.save!
+# youri.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+# youri.save!
 
 audrey = User.create!(first_name: 'Audrey', last_name: "Gonera",  email:'audrey@email.com', password:'123456')
-audrey.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
-audrey.save!
+# audrey.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+# audrey.save!
 
 aymeric = User.create!(first_name: 'Aymeric', last_name: "Bonnaud", email:'aymeric@email.com', password:'123456')
-aymeric.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
-aymeric.save!
+# aymeric.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+# aymeric.save!
 p "#{User.count} users created"
 
 guy_proprio = User.create!(first_name: 'Guy', last_name: "Leriche", email:'guy.leriche@gmail.com', password:'guyguy')
-guy_proprio.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
-guy_proprio.save!
+# guy_proprio.photo.attach(io: URI.open('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+# guy_proprio.save!
 
 manuela_proprio = User.create!(first_name: 'Manuela', last_name: "Demane", email:'manu.demane@gmail.com', password:'guyguy')
-manuela_proprio.photo.attach(io: URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
-manuela_proprio.save!
+# manuela_proprio.photo.attach(io: URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+# manuela_proprio.save!
 
 ###########
 
