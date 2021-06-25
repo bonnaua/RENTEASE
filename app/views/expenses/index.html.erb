@@ -10,18 +10,18 @@
         <select class="select2" id="select-housing" name="housings">
           <option value=all>Tous mes biens</option>
           <% @housings.each do |housing| %>
-            <option value="housing-<%= housing.id %>"> <%= housing.name %></option>
+            <option value="housing-<%= housing.id %>"> <%= housing.name %> </option>
           <% end %>
         </select>
       </th>
 
-      <th>Catégorie
-        <!-- <select class="select2" id="select-category" name="categories">
+      <th>
+        <select class="select2" id="select-category" name="categories">
           <option value=all>Toutes les catégories</option>
-          <%# @expenses.each do |expense| %>
-            <option value=""> <%#= expense.category %></option>
-          <%# end %>
-        </select> -->
+          <% @expenses.each do |expense| %>
+            <option value="<%= expense.category %>"> <%= expense.category %></option>
+          <% end %>
+        </select>
       </th>
       <th>Libellés</th>
       <th>Prix</th>
@@ -29,14 +29,12 @@
     <% @expenses.each do |expense| %>
     <tr class="expense-row"
         data-housing-id="housing-<%= expense.housing.id %>"
-        data-category="categories" >
+        data-category="<%= expense.category %>" >
       <td><%= expense.housing.name%></td>
       <td><%= expense.category%></td>
       <td><%= expense.name%></td>
       <td><%= expense.amount.round %> €</td>
     </tr>
     <% end %>
-
-
   </table>
 </div>
