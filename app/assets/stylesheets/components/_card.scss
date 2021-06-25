@@ -23,6 +23,49 @@
   opacity: .7;
 }
 
+.card-renter {
+  overflow: hidden;
+  background: white;
+  margin: 10 auto;
+  position: relative;
+  margin: 1.25rem;
+  border-radius: 1.25rem;
+  height: 400px;
+  width: 300px;
+  max-width: 100%;
+  border: 3px $flash solid ;
+  background-color: $blanc-1;
+  text-align: left;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.renter-grid {
+  flex-grow: 1;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+}
+
+.card-renter h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.card-renter p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 5;
+}
+
+
 .card-housing .card-housing-infos {
   text-align: left;
   padding: 10px;

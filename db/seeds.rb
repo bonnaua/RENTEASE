@@ -8,6 +8,12 @@
 require 'uri'
 require 'date'
 
+p "destroying renter_contracts"
+RenterContract.destroy_all
+p "renter_contracts destroyed"
+p "destroying contracts"
+Contract.destroy_all
+p "contracts destroyed"
 p "destroying users"
 User.destroy_all
 p "users destroyed"
@@ -230,7 +236,7 @@ p "destroying contracts"
 Contract.destroy_all
 p "contracts destroyed"
 
-#AUDREY
+#AYMERIC
 
 contract1 = Contract.create!(housing: housing1, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 800, rental_expenses: 100)
 
@@ -249,7 +255,7 @@ contract7 = Contract.create!(housing: housing4, start_date: Date.new(2016,01,01)
 contract8 = Contract.create!(housing: housing4, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 1250, rental_expenses: 200)
 
 
-#AYMERIC
+#AUDREY
 
 contract9 = Contract.create!(housing: housing5, start_date: Date.new(2016,01,01), end_date: Date.new(2018,06,30), rent_due_date: Date.new(2016,01,01),  rent: 2000, rental_expenses: 200)
 
@@ -267,6 +273,7 @@ contract15 = Contract.create!(housing: housing8, start_date: Date.new(2016,01,01
 
 contract16 = Contract.create!(housing: housing8, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 990, rental_expenses: 10)
 
+renter_contract9 = RenterContract.create!(renter_id: capucine.id, contract_id: contract9.id )
 
 #YOURI
 

@@ -2,6 +2,13 @@ class RentersController < ApplicationController
   before_action :set_renter, only: [:show, :destroy, :edit, :update]
 
   def index
+
+    #search bar
+    @renters_search = []
+    if params[:query].present?
+      @renters_search = Renter.global_search(params[:query])
+    end
+
     @renters = Renter.all
   end
 
