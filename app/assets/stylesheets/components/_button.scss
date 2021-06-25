@@ -14,3 +14,206 @@
   text-decoration: none;
   color: $flash !important;
 }
+
+.btn-signup-form-flash-version {
+  border: 4px solid $flash;
+  text-align:center;
+  font-size: 16px;
+  border-radius: 38px;
+  color: $flash !important;
+  padding: 15px 32px;
+  width: 100%;
+  opacity: 0.8;
+  width: 100%;
+}
+.btn-signup-form-flash-version:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: $flash !important;
+}
+
+.btn-outline {
+  color: $gris;
+  border: 1px solid $gris;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  align-items: center;
+}
+
+.btn-outline:hover {
+  opacity: 1;
+}
+
+
+// COPY PASTE FROM RENTANIMALS TO SAVE TIME //
+$shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
+$inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), inset -.2rem -.2rem .5rem var(--white);
+$shadow: inset 0 0 15px rgba(0,0,0,0.2),
+inset -.2rem -.2rem .5rem var(--white);
+$inner-shadow: 0 0 15px rgba(0,0,0,0.2),
+-.2rem -.2rem .5rem var(--white);
+
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-devise-form {
+  width: 100%
+}
+
+
+.btn-ghost-green {
+  color: green;
+  border: 1px solid green;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-green:hover {
+  opacity: 1;
+}
+
+.btn-ghost-red {
+  color: red;
+  border: 1px solid red;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost-red:hover {
+  opacity: 1;
+}
+
+.btn-accepted {
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 340px;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: green;
+  opacity: 0.7;
+}
+
+.btn-declined {
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 340px;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: red;
+  opacity: 0.7;
+}
+
+.btn-pending {
+  position: absolute;
+  margin-left: 10px;
+  margin-bottom: 340px;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: orange;
+  opacity: 0.7;
+}
+
+.btn-date {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 330px;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  background: $noir;
+  opacity: 0.7;
+  vertical-align: middle;
+}
+
+.btn-date h4 {
+  display: flex;
+}
+
+
+.btn-booking-tabs {
+  width: 32.5%;
+  height: 4rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  //padding-left: 1.8rem;
+  box-shadow: $inner-shadow;
+  background: none;
+  font-family: inherit;
+  color: #C58C6D;
+  margin:10px;
+
+  &:focus {
+    outline: none;
+    box-shadow: $shadow;
+  }
+}
+
+.btn-delete {
+  color: white !important;
+  background-color:$gris;
+  padding: 8px 24px;
+  border: 2px solid $gris;
+  border-radius: 4px;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  margin-top:4px;
+  text-align:center;
+}
+.btn-delete:hover {
+  opacity: 1;
+}
+
+.btn-edit {
+  color: white !important;
+  padding: 8px 24px;
+  border: 1px solid $gris;
+  border-radius: 4px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  text-align:center;
+
+}
+.btn-edit:hover {
+  opacity: 1;
+
+}
+
+
+.buttons {
+  display: flex;
+  flex-direction:column;
+  padding: 4px;
+}
+
+.card-bookings-dos-donts {
+  ul {
+  list-style-type: none;
+  }
+}
+// END OF COPY PASTE FROM RENTANIMALS //

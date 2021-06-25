@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <h2>Add a housing</h2>
   <br>
   <%= simple_form_for(@housing) do |f| %>
@@ -9,13 +9,13 @@
     <%= f.input :nb_rooms %>
     <%= f.input :surface %>
     <%= f.label :category %>
-    <%= f.select :category, [] %>
+    <%= f.select :category, ["Appartement", "Maison", "Loft", "Atelier", "Duplex", "Chambre"] %>
     <%= f.label :status %>
-    <%= f.select :status, [] %>
+    <%= f.select :status, ["Loué", "Disponible", "Indisponible"] %>
     <%= f.input :photo, as: :file %>
     </div>
     <div>
-      <%= f.button :submit, "Add my housing"%>
+      <%= f.button :submit, "Add my house"%>
     </div>
   <% end %>
 </div>

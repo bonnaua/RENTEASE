@@ -19,7 +19,7 @@
 
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="/expenses">
                        <i class="fa fa-table fa-2x"></i>
                         <span class="nav-text">
                             Comptabilité
@@ -28,7 +28,7 @@
 
                 </li>
                 <li class="/renters">
-                    <a href="/housings">
+                    <a href="/renters">
                         <i class="fa fa-table fa-2x"></i>
                         <span class="nav-text">
                             Locataires
@@ -37,7 +37,7 @@
 
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="">
                        <i class="fa fa-folder-open fa-2x"></i>
                         <span class="nav-text">
                             Documents administratifs
@@ -49,12 +49,10 @@
 
             <ul class="logout">
                 <li>
-                   <a href="/">
-                         <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">
-                            Logout
-                        </span>
-                    </a>
+                    <i class="fa fa-power-off fa-2x"></i>
+                      <span class="nav-text">
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                      </span>
                 </li>
             </ul>
         </nav>
