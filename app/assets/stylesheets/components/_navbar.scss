@@ -1,6 +1,31 @@
+
+// NAV 1
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: $blanc-1;
+//   position: fixed;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 50px;
+//   height: 50px;
+// }
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $blanc-1;
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  position: fixed;
+  z-index: 999;
+  box-shadow: 0 5px 10px rgba(50,50,50,.25);
+  opacity: 0.9;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,8 +33,29 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
+
+.navbar-lewagon .nav-item {
+  text-transform: uppercase;
+  font-style: bold;
+}
+
+.navbar-lewagon .active-link {
+  border-bottom: 2px solid $flash;
+}
+
+.navbar-link {
+  margin: 0 1rem;
+  padding-bottom: 2px;
+  &:hover {
+    border-bottom: 2px solid $flash;
+  }
+}
+
+
+
+// NAV 2
 
 .fa-2x {
 font-size: 2em;
