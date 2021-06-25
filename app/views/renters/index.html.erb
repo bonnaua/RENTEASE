@@ -6,11 +6,9 @@
   <div class="renter-grid">
       <% @renters.each do |renter| %>
         <div class="card-renter">
-          <!-- <div class="card-renter-infos card-renter-user"> -->
           <% if renter.photo.attached? %>
-            <%= cl_image_tag renter.photo.key, height: 100, width: 100, crop: :fill %>
+            <%= cl_image_tag renter.photo.key, height: 400, width: 400, crop: :fill %>
           <% end %>
-          <!-- </div> -->
           <h3><%= renter.first_name %> <%= renter.last_name %> </h3>
           <p><%= renter.description %></p>
           <hr size="1" width="90%" color="#DAF552">

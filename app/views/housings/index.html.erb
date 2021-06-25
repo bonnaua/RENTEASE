@@ -42,7 +42,7 @@
           <%= link_to housing_path(housing) do %>
             <div class="card-housing">
               <% if housing.photo.attached? %>
-                <%= cl_image_tag housing.photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag housing.photo.key, height: 900, width: 1200, crop: :fill %>
               <% end %>
               <div class="card-housing-infos">
                 <div>
@@ -86,7 +86,7 @@
           <%= link_to housing_path(housing) do %>
             <div class="card-housing">
               <% if housing.photo.attached? %>
-                <%= cl_image_tag housing.photo.key, height: 300, width: 400, crop: :fill %>
+                <%= cl_image_tag housing.photo.key, height: 900, width: 1200, crop: :fill %>
               <% end %>
               <div class="card-housing-infos">
                 <div>
