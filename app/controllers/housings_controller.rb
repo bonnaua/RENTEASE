@@ -48,7 +48,7 @@ class HousingsController < ApplicationController
   end
 
   def housing_params
-    params.require(:housing).permit(:name, :address, :description, :nb_rooms, :surface, :category, :status)
+    params.require(:housing).permit(:name, :address, :description, :nb_rooms, :surface, :category, :status, :photo)
   end
 
 end
