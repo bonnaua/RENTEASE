@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :expenses
 
+  resources :dashboard, only: [:index]
+
 
   require "sidekiq/web"
   authenticate :user, ->(user) { user.admin? } do
