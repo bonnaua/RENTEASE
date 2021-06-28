@@ -23,7 +23,7 @@ class HousingsController < ApplicationController
     @housing.user = current_user
     @housing.save!
 
-    redirect_to housing_path(@housing)
+    redirect_to new_housing_contract_path(@housing)
   end
 
   def destroy

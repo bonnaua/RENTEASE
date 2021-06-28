@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Ajouter le contrat</h2>
+  <br>
+  <%= simple_form_for([@housing, @contract]) do |f| %>
+    <div>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :rent_due_date %>
+    <%= f.input :rent %>
+    <%= f.input :rental_expenses %>
+    </div>
+    <div>
+      <%= f.button :submit, "Ajouter le contrat"%>
+    </div>
+  <% end %>
+</div>
