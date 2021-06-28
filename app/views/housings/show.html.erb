@@ -9,6 +9,12 @@
     <% if @housing.photo.attached? %>
       <%= cl_image_tag @housing.photo.key, height: 900, width: 1200, crop: :fill %>
     <% end %>
+    <div class="card-housing-show-avatar">
+    <% if @housing.get_renter_avatar_on_housing.attached? %>
+      <% link_to renter_path(@housing.contracts.last.renter_contracts.last.renter.id) %>
+      <%= cl_image_tag @housing.get_renter_avatar_on_housing.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
+    <% end %>
+    </div>
     <hr size="1" width="100%" color="#DEDFEC">
     <div class="card-housing-show-infos">
       <div class="text-description">
@@ -56,10 +62,13 @@
       <div class="card-contract">
         <h3><%= "Contract #{contract.id}" %></h3>
         <p class="contract-duration"><%= "#{contract.start_date} / #{contract.end_date}" %></p>
-        <p><%= contract.rent_due_date %></p>
+        <!-- <p><%= contract.rent_due_date %></p> -->
         <p><%= "Rent: #{contract.rent}€" %></p>
         <p><%= "Rental Expenses: #{contract.rental_expenses}€" %></p>
-        <p><%= "Total: #{contract.rent + contract.rental_expenses}€" %></p>
+        <p class="contract-price"><%= "Total: #{contract.rent + contract.rental_expenses}€" %></p>
+        <% if contract.get_renter_avatar.attached? %>
+          <%= cl_image_tag contract.get_renter_avatar.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
+        <% end %>
       </div>
     <% end %>
   </div>
