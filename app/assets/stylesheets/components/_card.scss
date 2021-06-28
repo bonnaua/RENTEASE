@@ -108,7 +108,7 @@
 .card-housing-show p {
   font-size: 20px;
   opacity: .9;
-  margin: 0px !important;
+  margin: 0 !important;
 }
 
 .card-housing-show .card-housing-show-infos {
@@ -118,6 +118,17 @@
   justify-content: space-around;
   align-items: center;
   position: relative;
+}
+
+.card-housing-show-avatar > img {
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: solid $blanc-1 1px;
+  border-radius: 50%;
+  position: absolute;
+  right: 120px;
+  top: 420px;
 }
 
 
@@ -133,19 +144,38 @@
   width: 100%;
 }
 
+.card-contract > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
 .card-contract h3 {
   font-size: 18px;
   font-weight: bold;
   margin: 5px;
 }
 
+.card-contract p {
+  font-size: 16px;
+  opacity: .9;
+  margin: 0 !important;
+}
+
 .contract-duration {
-  background-color: $flash;
+  border: solid 1px;
+  border-color: $flash;
   opacity: 0.7;
   padding: 10px 20px;
   border-radius: 4px;
 }
 
+.contract-price {
+  background-color: $flash;
+  opacity: 0.7;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
 
 // CARDS RENNTERS //
 
