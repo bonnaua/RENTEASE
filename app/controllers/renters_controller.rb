@@ -51,6 +51,6 @@ class RentersController < ApplicationController
   end
 
   def renter_params
-    params.require(:renter).permit(:first_name, :last_name, :email, :phone_number, :description)
+    params.require(:renter).permit(:first_name, :last_name, :email, :phone_number, :description, :photo)
   end
 end
