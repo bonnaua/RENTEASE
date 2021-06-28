@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
 
-  resources :renters, only: [:index]
+  resources :renters
 
   resources :rents
 
