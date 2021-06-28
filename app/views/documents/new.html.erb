@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Add a document</h2>
+  <br>
+  <%= simple_form_for([@housing, @document]) do |f| %>
+    <div>
+    <%= f.input :name %>
+    <%= f.label :category %>
+    <%= f.select :category, ["Quittance de loyer", "Assurance habitation", "Contrat d'habitation"] %>
+    </div>
+    <div>
+      <%= f.button :submit, "Add the document"%>
+    </div>
+  <% end %>
+</div>

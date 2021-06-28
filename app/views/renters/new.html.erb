@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Ajouter un locataire</h2>
+  <br>
+  <%= simple_form_for([@contract, @renter]) do |f| %>
+    <div>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :phone_number %>
+    <%= f.input :description %>
+    </div>
+    <div>
+      <%= f.button :submit, "Ajouter le locataire"%>
+    </div>
+  <% end %>
+</div>

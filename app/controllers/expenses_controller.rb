@@ -20,10 +20,11 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(expense_params)
-    @expense.user = current_user
+    @housing = Housing.find(params[:expense][:housing_id])
+    @expense.housing = @housing
     @expense.save!
 
-    redirect_to expense_path(@expense)
+    redirect_to expenses_path
   end
 
   def destroy
@@ -48,6 +49,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:name, :category, :description, :amount)
+    params.require(:expense).permit(:name, :category, :description, :amount, :housing_id, :frequency)
   end
 end

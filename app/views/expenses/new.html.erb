@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Ajouter une dépense</h2>
+  <br>
+  <%= simple_form_for(@expense) do |f| %>
+    <div>
+    <%= f.input :name %>
+    <%= f.association :housing, collection: Housing.where(user: current_user) %>
+    <%= f.label :category %>
+    <%= f.select :category, ["Taxes foncières", "Charges locatives", "Charges copropriété", "Rénovation"] %>
+    <%= f.input :description %>
+    <%= f.input :amount %>
+
+    </div>
+    <div>
+      <%= f.button :submit, "Ajouter une dépense"%>
+    </div>
+  <% end %>
+</div>
