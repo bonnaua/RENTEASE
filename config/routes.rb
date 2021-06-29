@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resources :expenses
 
-
+  resources :dashboard, only: [:index]
   resources :documents, only: [:index]
 
   resources :contracts, only: [] do
