@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -31,12 +32,15 @@ import { initSelect2 } from '../plugins/init_select2';
 import {selectHousings} from '../plugins/select_expense';
 import {selectCategory} from '../plugins/select_expense';
 import { dragElement } from '../components/searchbar';
+import {initChartJS} from '../plugins/init_chart'
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initSelect2();
-  selectHousings();
-  selectCategory();
+  // initSelect2();
+  // selectHousings();
+  // selectCategory();
+  initChartJS();
+
 
 });

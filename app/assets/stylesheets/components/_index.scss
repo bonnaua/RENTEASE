@@ -7,6 +7,9 @@
 @import "searchbar";
 @import "card";
 @import "devise_forms";
+@import "table";
+@import "chart";
+
 
 .title-position {
   padding: 10px 0;
@@ -16,4 +19,3 @@
   position: relative;
 }
 
-@import "table";

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :expenses
 
+
   resources :documents, only: [:index]
 
   resources :contracts, only: [] do
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   resources :renter_contracts
+
 
 
   require "sidekiq/web"
