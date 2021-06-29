@@ -99,11 +99,6 @@ p "#{Housing.count} housings created"
 ############
 
 ########################### EXPENSES ####################################
-# expense_1_1  = Expense.create!(name: 'charges mai' , category:'charge locatives' , amount: 80 )
-# expense_1_2  = Expense.create!(name: 'charges juin' , category:'charge locatives' , amount: 80)
-# expense_1_3  = Expense.create!(name: 'charges juillet', category:'charge locatives' , amount: 80)
-# expense_2_1  = Expense.create!(name: 'travaux rénovation' , category:'rénovation' , amount: 14000, frequency: 1)
-# expense_2_2  = Expense.create!(name: 'charges locatives 2018' , category:'charges locatives' , amount: 1600, frequency: 12)
 
 p "destroying Expenses"
 Expense.destroy_all
@@ -114,16 +109,25 @@ Housing.all.each do |housing|
   amount_reno = (1000..10000).step(500).to_a.sample
   amount_taxe_fonc = (500..6000).step(5).to_a.sample
   amount_copro = (80..300).to_a.sample
+  days = {0 => "Sunday",
+          1 => "Monday",
+          2 => "Tuesday",
+          3 => "Wednesday",
+          4 => "Thursday",
+          5 => "Friday",
+          6 => "Saturday"}
 
   months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
+  months_number = [1,2,3,4,5,6,7,8,9,10,11,12]
   years = [2016,2017,2018,2019]
   trimester = [1, 2, 3, 4]
   counter_month  = 0
   counter_trimester = 0
   periodicity = (1..47).to_a.sample
   periodicity.times do
-    Expense.create!(name: "Taxes foncières #{years[counter_month/12]}"  , category:'Taxes foncières' , amount: amount_taxe_fonc, housing: housing) if counter_month % 12 == 0
-    Expense.create!(name: "Charges locatives #{months[counter_month%12]} #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing)
+    created_at_modif = "#{years[counter_month/12]}/#{months_number[counter_month%12]}/01"
+    Expense.create!(name: "Taxes foncières #{years[counter_month/12]}"  , category:'Taxes foncières' , amount: amount_taxe_fonc, housing: housing, created_at: created_at_modif, updated_at: created_at_modif) if counter_month % 12 == 0
+    Expense.create!(name: "Charges locatives #{months[counter_month%12]} #{years[counter_month/12]}"  , category:'Charges locatives' , amount: amount_CC, housing: housing, created_at: created_at_modif, updated_at: created_at_modif)
     counter_month += 1
   end
   nb_trimester = periodicity /3
@@ -131,7 +135,20 @@ Housing.all.each do |housing|
   trimestre_numero = 1
   nb_trimester.times do |i|
     i += 1
-    Expense.create!(name: "Charge copropriété trimestre #{trimestre_numero} #{year_number}"  , category:'Charges copropriété' , amount: amount_copro, housing: housing)
+    month = 0
+    case trimestre_numero
+    when 1
+      month = 01
+    when 2
+      month = 04
+    when 3
+      month = 07
+    when 4
+      month = 10
+    end
+    created_at_modif = "#{year_number}/#{month}/01"
+
+    Expense.create!(name: "Charge copropriété trimestre #{trimestre_numero} #{year_number}"  , category:'Charges copropriété' , amount: amount_copro, housing: housing, created_at: created_at_modif, updated_at: created_at_modif)
     (trimestre_numero%4==0) ? trimestre_numero = 1 : trimestre_numero +=1
     year_number += 1 if i%4 == 0
     counter_trimester += 1
@@ -139,29 +156,21 @@ Housing.all.each do |housing|
 
   ## CHARGES PONCTUELLES ##
   (0..1).to_a.sample.times do
-    Expense.create!(name: "Rénovation exceptionnelle cuisine"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+    created_at_modif = "#{years.sample}/09/01"
+    Expense.create!(name: "Rénovation exceptionnelle cuisine"  , category:'Rénovation' , amount: amount_reno, housing: housing, created_at: created_at_modif, updated_at: created_at_modif)
   end
   (0..1).to_a.sample.times do
-    Expense.create!(name: "Rénovation exceptionnelle isolation"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+    created_at_modif = "#{years.sample}/09/01"
+    Expense.create!(name: "Rénovation exceptionnelle isolation"  , category:'Rénovation' , amount: amount_reno, housing: housing, created_at: created_at_modif, updated_at: created_at_modif)
   end
   (0..1).to_a.sample.times do
-    Expense.create!(name: "Rénovation exceptionnelle ballon d'eau chaude"  , category:'Rénovation' , amount: amount_reno, housing: housing)
+    created_at_modif = "#{years.sample}/09/01"
+    Expense.create!(name: "Rénovation exceptionnelle ballon d'eau chaude"  , category:'Rénovation' , amount: amount_reno, housing: housing, created_at: created_at_modif, updated_at: created_at_modif)
   end
 
 end
 
 p "#{Expense.count} expenses created"
-
-
-# template
-
-#Expense.create!(name: 'Charge copropriété trimestre X' , category:'copopriété' , amount: XX)
-#Expense.create!(name: 'Charge locatives mois année' , category:'charge locatives' , amount: XX )
-#Expense.create!(name: 'Rénovation XXX' , category:'renovation' , amount: XX)
-#Expense.create!(name: 'Taxe foncière' , category:'impôts' , amount: XX )
-#Expense.create!(name: 'Taxe foncière' , category:'impôts' , amount: XX )
-#Expense.create!(name: 'Taxe foncière' , category:'impôts' , amount: XX )
-
 
 
 

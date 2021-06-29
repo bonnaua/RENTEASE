@@ -1,0 +1,11 @@
+<div class="container">
+  <table>
+    <% @documents.each do |document| %>
+      <tr class="expense-row">
+        <td><%= document.housing.name%></td>
+        <td><%= document.category%></td>
+        <td><%= document.name%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

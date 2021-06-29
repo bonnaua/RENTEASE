@@ -15,16 +15,19 @@ class RentersController < ApplicationController
   def show
   end
 
-  def new
-    @renter = Renter.new
-  end
-
   def create
     @renter = Renter.new(renter_params)
-    @renter.user = current_user
+    @contract = Contract.find(params[:contract_id])
     @renter.save!
 
-    redirect_to renter_path(@renter)
+    @renter_contract = RenterContract.create(contract: @contract, renter: @renter)
+
+    redirect_to new_housing_document_path(@contract.housing)
+  end
+
+  def new
+    @renter = Renter.new
+    @contract = Contract.find(params[:contract_id])
   end
 
   def destroy
@@ -48,8 +51,6 @@ class RentersController < ApplicationController
   end
 
   def renter_params
-    params.require(:renter).permit(:first_name, :last_name, :email, :phone_number, :description)
+    params.require(:renter).permit(:first_name, :last_name, :email, :phone_number, :description, :photo)
   end
 end
-
-
