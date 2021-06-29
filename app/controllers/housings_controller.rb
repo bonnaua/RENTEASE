@@ -12,6 +12,14 @@ class HousingsController < ApplicationController
   end
 
   def show
+    @housing_bis = Housing.where(id: params[:id])
+    @markers = @housing_bis.geocoded.map do |housing|
+      {
+        lat: housing.latitude,
+        lng: housing.longitude,
+        image_url: helpers.asset_url('location.svg')
+      }
+    end
   end
 
   def new
