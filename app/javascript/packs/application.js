@@ -32,15 +32,15 @@ import { initSelect2 } from '../plugins/init_select2';
 import {selectHousings} from '../plugins/select_expense';
 import {selectCategory} from '../plugins/select_expense';
 import { dragElement } from '../components/searchbar';
+import { initMapbox } from '../plugins/init_mapbox'
 import {initChartJS} from '../plugins/init_chart'
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
-  // selectHousings();
-  // selectCategory();
+  initSelect2();
+  initMapbox();
+  selectHousings();
+  selectCategory();
   initChartJS();
-
-
 });
