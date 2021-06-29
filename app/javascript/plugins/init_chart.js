@@ -68,14 +68,13 @@ const initChartJS =  () => {
     const rent = (rents[month] === undefined) ? 0 : rents[month] // Si pas de rents
     profits[month] = rent - expenses[month]
     tresuryLine[month] = Object.values(profits).reduce((a, b) => a + b, 0)
-    console.log(tresuryLine)
   })
+  const ctx = document.getElementById("bar-chart")
+  ctx.style.height = "450px";
+  ctx.style.width = "900px";
+  ctx.style.margin = "16px auto";
 
-
-
-
-  const myChart = new Chart(document.getElementById("bar-chart"), {
-
+  const myChart = new Chart(ctx, {
     data: {
       labels: Object.keys(profits),
       datasets: [
@@ -102,6 +101,7 @@ const initChartJS =  () => {
           text: 'Profit over the last year'
         }
       },
+      responsive: false,
 
       scales: {
         x: {

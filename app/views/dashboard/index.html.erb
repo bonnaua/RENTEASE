@@ -1,8 +1,31 @@
-<div class="main-dashboard" data-expenses="<%= @expenses_amount_by_month.to_json %>" data-rents="<%= @rent_amount_by_month.to_json %>">
-  <canvas id="bar-chart" width="800" height="450">
+<div id="body-dash">
 
-  </canvas>
+  <div class="cards-dashboard-container">
+    <div class="card-dashboard">
+        <h2>My Profit</h2>
+        <p>over the last year</p>
+        <h2 class="amount-card"><strong> <%=  (@profit_over_the_last_year /1000).round(1) %>k€</strong> (<%= ((@profit_over_the_last_year - @profit_two_years)*100/@profit_two_years).round() %>%)</h2>
+    </div>
+    <div class="card-dashboard">
+        <h2>My Revenue</h2>
+        <p>over the last year</p>
+        <h2 class="amount-card"><strong>+ <%=  (@rents_over_the_last_year /1000).round(1) %>k€</strong> (<%= ( @rents_two_years == 0 ) ? "-" : ((@rents_over_the_last_year - @rents_two_years)*100/@rents_two_years).round() %>%)</h2>
+    </div>
+    <div class="card-dashboard">
+        <h2>My Expenses</h2>
+        <p>over the last year</p>
+        <h2 class="amount-card"><strong>- <%=  (@expenses_over_the_last_year /1000).round(1) %>k€</strong> (<%= ((@expenses_over_the_last_year - @expenses_two_years)*100/@expenses_two_years).round() %>%)</h2>
+    </div>
+  </div>
+
+
+
+  <div class="main-dashboard" data-expenses="<%= @expenses_amount_by_month.to_json %>" data-rents="<%= @rent_amount_by_month.to_json %>">
+    <canvas id="bar-chart">
+
+    </canvas>
+  </div>
+
 </div>
-
 
 

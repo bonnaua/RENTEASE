@@ -222,4 +222,20 @@
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 20px;
 }
+.cards-dashboard-container {
+   display: flex;
+   justify-content: center;
+}
+.card-dashboard {
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding : 16px;
+  width : 300px;
+  height: 180px;
+  margin: 0px 12px;
+}
+
+.amount-card {
+  color: $flash;
+}
 
