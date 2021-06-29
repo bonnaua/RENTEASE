@@ -52,7 +52,9 @@ Chart.register(
 );
 
 const initChartJS =  () => {
-  const dataSet = document.querySelector('.main-dashboard').dataset
+  const dataSetElement = document.querySelector('.main-dashboard').dataset
+  if (!dataSetElement) return ;
+  const dataSet = dataSetElement.dataset;
   const expenses = {}
   const rents = JSON.parse(dataSet.rents)
   const profits = {}

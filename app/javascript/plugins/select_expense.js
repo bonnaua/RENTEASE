@@ -1,7 +1,9 @@
 
 
 const selectHousings = () => {
+
   const houseField = document.getElementById('select-housing');
+  if (!houseField) return ;
   houseField.onchange = () => {
     const allExpenses = document.querySelectorAll('.expense-row:not(.d-none)')
     const expensesSelected = document.querySelectorAll(`[data-housing-id="${houseField.value}"]`);
@@ -16,8 +18,7 @@ const selectHousings = () => {
 
 const selectCategory = () => {
   const categoryField = document.getElementById('select-category');
-  console.log(categoryField)
-  console.log(categoryField.value)
+  if (!categoryField) return ;
 
   categoryField.onchange = () => {
     console.log(categoryField.value)
