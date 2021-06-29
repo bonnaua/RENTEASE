@@ -5,6 +5,16 @@ class ContractsController < ApplicationController
 
   def new
     @contract = Contract.new
+    @housing = Housing.find(params[:housing_id])
+  end
+
+  def create
+    @contract = Contract.new(contract_params)
+    @housing = Housing.find(params[:housing_id])
+    @contract.housing = @housing
+    @contract.save!
+
+    redirect_to new_contract_renter_path(@contract)
   end
 
   private

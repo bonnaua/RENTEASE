@@ -1,0 +1,14 @@
+<div class="container">
+  <table>
+    <% @contracts.each do |contract| %>
+      <tr class="expense-row">
+        <td><%= contract.housing.name%></td>
+        <td><%= contract.start_date%></td>
+        <td><%= contract.end_date%></td>
+        <td><%= contract.rent_due_date%></td>
+        <td><%= contract.rent%></td>
+        <td><%= contract.rental_expenses%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

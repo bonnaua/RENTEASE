@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :housings do
-    resources :contracts, only: [:index]
+    resources :contracts
   end
+
+  resources :housings do
+    resources :documents, only: [:new, :create]
+  end
+
 
   resources :renters
 
@@ -12,7 +17,15 @@ Rails.application.routes.draw do
 
   resources :expenses
 
-  resources :dashboard, only: [:index]
+
+  resources :documents, only: [:index]
+
+  resources :contracts, only: [] do
+    resources :renters, only: [:new, :create]
+  end
+
+  resources :renter_contracts
+
 
 
   require "sidekiq/web"

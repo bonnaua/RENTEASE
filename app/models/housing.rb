@@ -14,4 +14,16 @@ class Housing < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  # def get_renter_avatar_on_housing
+  #   self.contracts.each do |contract|
+  #     contract.renter_contracts.each do |renter_contract|
+  #       return renter_contract.renters.last.photo
+  #     end
+  #   end
+  # end
+
+  def get_renter_avatar_on_housing
+    self.contracts.last.renter_contracts.last.renter.photo
+  end
 end

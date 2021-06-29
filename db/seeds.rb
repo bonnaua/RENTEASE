@@ -52,7 +52,7 @@ housing1.photo.attach(io: URI.open('https://media.architecturaldigest.com/photos
 housing1.save!
 
 housing2 = Housing.create!(name:"Loft atypique Triangle d'Or", address:'5 Rue François 1er, 75008 Paris', description:"À proximité de la place François 1er, au 6ème et dernier étage d'un immeuble ancien avec ascenseur, ce loft propose un grand séjour avec cuisine ouverte, deux chambres avec salle de bain, un dressing. Vue sur la Tour Eiffel.", nb_rooms: 5, surface: 144, user: aymeric, category: 'Loft', status: '')
-housing2.photo.attach(io: URI.open('https://media.architecturaldigest.com/photos/5f4ec3c973076a738b0b49d3/16:9/w_2560%2Cc_limit/HEJU%252520STUDIO%252520-%252520Bolivar%2525204.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
+housing2.photo.attach(io: URI.open('https://media.architecturaldigest.com/photos/60ca624ef509f73499ad663f/16:9/w_2560%2Cc_limit/1667-07a4706.jpgs'), filename: 'X.jpg', content_type: 'image/jpg')
 housing2.save!
 
 housing3 = Housing.create!(name:'Appartement 1 chambre Trocadéro', address:'11 Avenue Raymond Poincaré, 75116 Paris', description:"Au dernier étage d'un immeuble classé, cet appartement rénové et meublé propose une grande entrée, un double séjour avec cuisine, une chambre de maitre et sa salle de bain. Belle hauteur sous plafond.", nb_rooms: 3, surface: 70, user: aymeric, category: 'Appartement', status: '')
@@ -191,23 +191,23 @@ p "#{Expense.count} expenses created"
 p "destroying renters"
 Renter.destroy_all
 p "renters destroyed"
-capucine = Renter.create!(first_name: 'Capucine', last_name: "Magret", email:'capu@email.com',phone_number:'0782452616' , description:"J'adore la patisserie")
+capucine = Renter.create!(first_name: 'Capucine', last_name: "Magret", email:'capu@email.com',phone_number:'0782452616' , description:"Patissière expérimentée")
 capucine.photo.attach(io: URI.open('https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 capucine.save!
 
-theotime = Renter.create!(first_name: 'Théotime', last_name: "Malpe", email:'theo@email.com',phone_number:'0682452616' , description:"J'adore jouer de la guitare")
+theotime = Renter.create!(first_name: 'Théotime', last_name: "Malpe", email:'theo@email.com',phone_number:'0682452616' , description:"Postier")
 theotime.photo.attach(io: URI.open('https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=402&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 theotime.save!
 
-caroline = Renter.create!(first_name: 'Caroline', last_name: "Kilo", email:'caro.kilo@gmail.com',phone_number:'0782234616' , description:"Je suis calme et réservée")
+caroline = Renter.create!(first_name: 'Caroline', last_name: "Kilo", email:'caro.kilo@gmail.com',phone_number:'0782234616' , description:"Étudiante en stage de fin d'études")
 caroline.photo.attach(io: URI.open('https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 caroline.save!
 
-allan    = Renter.create!(first_name: 'Allan', last_name: "Violon", email:'allanviollon43@gmail.com',phone_number:'0678923452' , description:"Le rock était mieux avant")
+allan    = Renter.create!(first_name: 'Allan', last_name: "Violon", email:'allanviollon43@gmail.com',phone_number:'0678923452' , description:"Musicien professionnel")
 allan.photo.attach(io: URI.open('https://images.unsplash.com/photo-1622031093531-f4e641788763?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 allan.save!
 
-henri    = Renter.create!(first_name: 'Henri', last_name: "De Zer", email:'hdz@email.com',phone_number:'0782452689' , description:"J'ai moi aussi un appartement")
+henri    = Renter.create!(first_name: 'Henri', last_name: "De Zer", email:'hdz@email.com',phone_number:'0782452689' , description:"Jeune actif dans l'informatique")
 henri.photo.attach(io: URI.open('https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 henri.save!
 
@@ -219,7 +219,7 @@ charlotte = Renter.create!(first_name: 'Charlotte', last_name: "Chui", email:'ch
 charlotte.photo.attach(io: URI.open('https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 charlotte.save!
 
-maxence   = Renter.create!(first_name: 'Maxence', last_name: "Chauvin", email:'maxlamenace@email.com',phone_number:'067354517' , description:"Consultant chez Deloite Data Consulting International Firm Worldwide")
+maxence   = Renter.create!(first_name: 'Maxence', last_name: "Chauvin", email:'maxlamenace@email.com',phone_number:'067354517' , description:"Consultant Deloitte Data")
 maxence.photo.attach(io: URI.open('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 maxence.save!
 
@@ -227,14 +227,73 @@ benjamine = Renter.create!(first_name: 'Benjamine', last_name: "Meaurro", email:
 benjamine.photo.attach(io: URI.open('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 benjamine.save!
 
-louise    = Renter.create!(first_name: 'Louise', last_name: "Cusson", email:'louloudu13@email.com',phone_number:'0607080910' , description:"J'adore la musique contemporaine avec des sonorités anciennes")
+louise    = Renter.create!(first_name: 'Louise', last_name: "Cusson", email:'louloudu13@email.com',phone_number:'0607080910' , description:"Egyptologue")
 louise.photo.attach(io: URI.open('https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=334&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 louise.save!
 
-gregoire  = Renter.create!(first_name: 'Grégoire', last_name: "Baze", email:'gregzer@gmail.com',phone_number:'0681545251' , description:"Surfer de profession, je me reconvertis dans la data")
+gregoire  = Renter.create!(first_name: 'Grégoire', last_name: "Baze", email:'gregzer@gmail.com',phone_number:'0681545251' , description:"Surfer de profession, reconverti dans la data")
 gregoire.photo.attach(io: URI.open('https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 gregoire.save!
 
+luiz    = Renter.create!(first_name: 'Luiz', last_name: "Da Cruz", email:'luiz@gmail.com',phone_number:'0681567751' , description:"Commercial Renault France")
+luiz.photo.attach(io: URI.open('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+luiz.save!
+
+manuel    = Renter.create!(first_name: 'Manuel', last_name: "Valls", email:'manurepondstp@gmail.com',phone_number:'0666567891' , description:"Ancien expat de retour d'Espagne")
+manuel.photo.attach(io: URI.open('https://pbs.twimg.com/profile_images/1108674272539611137/yTcXvPPX.png'), filename: 'X.jpg', content_type: 'image/jpg')
+manuel.save!
+
+christophe = Renter.create!(first_name: 'Christophe', last_name: "Croux", email:'ccroux@gmail.com',phone_number:'0634549278' , description:"Professeur et chercheur")
+christophe.photo.attach(io: URI.open('https://images.unsplash.com/photo-1504257432389-52343af06ae3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+christophe.save!
+
+maeva = Renter.create!(first_name: 'Maeva', last_name: "Aveam", email:'maevaaveam@gmail.com',phone_number:'0783475610' , description:"Digital sedentary")
+maeva.photo.attach(io: URI.open('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+maeva.save!
+
+judith = Renter.create!(first_name: 'Judith', last_name: "Leroy", email:'judith@gmail.com',phone_number:'0657983434' , description:"Chef cuisinière")
+judith.photo.attach(io: URI.open('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+judith.save!
+
+ahmed = Renter.create!(first_name: 'Ahmed', last_name: "Messaoud", email:'ahmed@gmail.com',phone_number:'0710119889' , description:"Étudiant en architecture")
+ahmed.photo.attach(io: URI.open('https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+ahmed.save!
+
+federico = Renter.create!(first_name: 'Federico', last_name: "Chiesa", email:'fefe@gmail.com',phone_number:'0699108765' , description:"Footballeur")
+federico.photo.attach(io: URI.open('https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+federico.save!
+
+austin = Renter.create!(first_name: 'Austin', last_name: "Wade", email:'austin@gmail.com',phone_number:'0691256918' , description:"American developer in Paris")
+austin.photo.attach(io: URI.open('https://images.unsplash.com/photo-1520409364224-63400afe26e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=716&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+austin.save!
+
+nico = Renter.create!(first_name: 'Nico', last_name: "Rosberg", email:'nico@gmail.com',phone_number:'0687615434' , description:"Pilote de course")
+nico.photo.attach(io: URI.open('https://images.unsplash.com/photo-1509670572852-5823184def8c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+nico.save!
+
+giulia = Renter.create!(first_name: 'Giulia', last_name: "Della Rovere", email:'giulia@gmail.com',phone_number:'0655768911' , description:"Designer d'intérieur")
+giulia.photo.attach(io: URI.open('https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+giulia.save!
+
+fatima = Renter.create!(first_name: 'Fatima', last_name: "Louella", email:'fatima@gmail.com',phone_number:'0653337865' , description:"Ingénieur Agronome")
+fatima.photo.attach(io: URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+fatima.save!
+
+malo = Renter.create!(first_name: 'Malo', last_name: "Deaux", email:'malo@gmail.com',phone_number:'0788654321' , description:"Marin et cycliste")
+malo.photo.attach(io: URI.open('https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+malo.save!
+
+raphaelle = Renter.create!(first_name: 'Raphaëlle', last_name: "Laumière", email:'raphaelleuh@gmail.com',phone_number:'06543668921' , description:"Chercheuse en lettres")
+raphaelle.photo.attach(io: URI.open('https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+raphaelle.save!
+
+imane = Renter.create!(first_name: 'Imane', last_name: "Enami", email:'imane@gmail.com',phone_number:'0788654701' , description:"Horlogère chez Piaget")
+imane.photo.attach(io: URI.open('https://images.unsplash.com/photo-1567783044809-704b82c7f862?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+imane.save!
+
+joseph = Renter.create!(first_name: 'Joseph', last_name: "Cohen", email:'joseph@gmail.com',phone_number:'0766897511' , description:"Restaurateur et caviste")
+joseph.photo.attach(io: URI.open('https://images.unsplash.com/photo-1615208429553-d9982932ca5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+joseph.save!
 
 p "#{Renter.count} renters created"
 
@@ -266,11 +325,11 @@ contract8 = Contract.create!(housing: housing4, start_date: Date.new(2018,01,01)
 
 renter_contract1 = RenterContract.create!(renter_id: capucine.id, contract_id: contract1.id )
 
-renter_contract2 = RenterContract.create!(renter_id: benjamine.id, contract_id: contract2.id )
+renter_contract2 = RenterContract.create!(renter_id: theotime.id, contract_id: contract2.id )
 
-renter_contract3 = RenterContract.create!(renter_id: gregoire.id, contract_id: contract3.id )
+renter_contract3 = RenterContract.create!(renter_id: caroline.id, contract_id: contract3.id )
 
-renter_contract4 = RenterContract.create!(renter_id: louise.id, contract_id: contract4.id )
+renter_contract4 = RenterContract.create!(renter_id: allan.id, contract_id: contract4.id )
 
 renter_contract5 = RenterContract.create!(renter_id: henri.id, contract_id: contract5.id )
 
@@ -300,63 +359,63 @@ contract15 = Contract.create!(housing: housing8, start_date: Date.new(2016,01,01
 
 contract16 = Contract.create!(housing: housing8, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 990, rental_expenses: 10)
 
-renter_contract9 = RenterContract.create!(renter_id: capucine.id, contract_id: contract9.id )
+renter_contract9 = RenterContract.create!(renter_id: benjamine.id, contract_id: contract9.id )
 
-renter_contract10 = RenterContract.create!(renter_id: theotime.id, contract_id: contract10.id )
+renter_contract10 = RenterContract.create!(renter_id: louise.id, contract_id: contract10.id )
 
-renter_contract11 = RenterContract.create!(renter_id: caroline.id, contract_id: contract11.id )
+renter_contract11 = RenterContract.create!(renter_id: gregoire.id, contract_id: contract11.id )
 
-renter_contract12 = RenterContract.create!(renter_id: allan.id, contract_id: contract12.id )
+renter_contract12 = RenterContract.create!(renter_id: luiz.id, contract_id: contract12.id )
 
-renter_contract13 = RenterContract.create!(renter_id: henri.id, contract_id: contract13.id )
+renter_contract13 = RenterContract.create!(renter_id: manuel.id, contract_id: contract13.id )
 
-renter_contract14 = RenterContract.create!(renter_id: hugo.id, contract_id: contract14.id )
+renter_contract14 = RenterContract.create!(renter_id: christophe.id, contract_id: contract14.id )
 
-renter_contract15 = RenterContract.create!(renter_id: charlotte.id, contract_id: contract15.id )
+renter_contract15 = RenterContract.create!(renter_id: maeva.id, contract_id: contract15.id )
 
-renter_contract16 = RenterContract.create!(renter_id: maxence.id, contract_id: contract16.id )
+renter_contract16 = RenterContract.create!(renter_id: judith.id, contract_id: contract16.id )
 
 #YOURI
 
-contract16 = Contract.create!(housing: housing9, start_date: Date.new(2016,01,01), end_date: Date.new(2016,06,30), rent_due_date: Date.new(2016,01,01),  rent: 2000, rental_expenses: 100)
+contract17 = Contract.create!(housing: housing9, start_date: Date.new(2016,01,01), end_date: Date.new(2016,06,30), rent_due_date: Date.new(2016,01,01),  rent: 2000, rental_expenses: 100)
 
-contract17 = Contract.create!(housing: housing9, start_date: Date.new(2016,07,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,07,01),  rent: 2000, rental_expenses: 100)
+contract18 = Contract.create!(housing: housing9, start_date: Date.new(2016,07,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,07,01),  rent: 2000, rental_expenses: 100)
 
-contract18 = Contract.create!(housing: housing9, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 2000, rental_expenses: 100)
+contract19 = Contract.create!(housing: housing9, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 2000, rental_expenses: 100)
 
-contract19 = Contract.create!(housing: housing10, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1800, rental_expenses: 100)
+contract20 = Contract.create!(housing: housing10, start_date: Date.new(2016,01,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,01,01),  rent: 1800, rental_expenses: 100)
 
-contract20 = Contract.create!(housing: housing10, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 1800, rental_expenses: 100)
+contract21 = Contract.create!(housing: housing10, start_date: Date.new(2018,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,01,01),  rent: 1800, rental_expenses: 100)
 
-contract21 = Contract.create!(housing: housing11, start_date: Date.new(2016,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2016,01,01),  rent: 5000, rental_expenses: 500)
+contract22 = Contract.create!(housing: housing11, start_date: Date.new(2016,01,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2016,01,01),  rent: 5000, rental_expenses: 500)
 
-contract22 = Contract.create!(housing: housing12, start_date: Date.new(2016,01,01), end_date: Date.new(2016,06,30), rent_due_date: Date.new(2016,01,01),  rent: 4100, rental_expenses: 150)
+contract23 = Contract.create!(housing: housing12, start_date: Date.new(2016,01,01), end_date: Date.new(2016,06,30), rent_due_date: Date.new(2016,01,01),  rent: 4100, rental_expenses: 150)
 
-contract23 = Contract.create!(housing: housing12, start_date: Date.new(2016,07,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,07,01),  rent: 4100, rental_expenses: 150)
+contract24 = Contract.create!(housing: housing12, start_date: Date.new(2016,07,01), end_date: Date.new(2017,12,31), rent_due_date: Date.new(2016,07,01),  rent: 4100, rental_expenses: 150)
 
-contract24 = Contract.create!(housing: housing12, start_date: Date.new(2018,01,01), end_date: Date.new(2018,06,30), rent_due_date: Date.new(2018,01,01),  rent: 3100, rental_expenses: 150)
+contract25 = Contract.create!(housing: housing12, start_date: Date.new(2018,01,01), end_date: Date.new(2018,06,30), rent_due_date: Date.new(2018,01,01),  rent: 3100, rental_expenses: 150)
 
-contract25 = Contract.create!(housing: housing12, start_date: Date.new(2018,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,07,01),  rent: 3100, rental_expenses: 150)
+contract26 = Contract.create!(housing: housing12, start_date: Date.new(2018,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,07,01),  rent: 3100, rental_expenses: 150)
 
-renter_contract16 = RenterContract.create!(renter_id: capucine.id, contract_id: contract16.id )
+renter_contract17 = RenterContract.create!(renter_id: ahmed.id, contract_id: contract16.id )
 
-renter_contract17 = RenterContract.create!(renter_id: benjamine.id, contract_id: contract17.id )
+renter_contract18 = RenterContract.create!(renter_id: federico.id, contract_id: contract17.id )
 
-renter_contract18 = RenterContract.create!(renter_id: gregoire.id, contract_id: contract18.id )
+renter_contract19 = RenterContract.create!(renter_id: austin.id, contract_id: contract18.id )
 
-renter_contract19 = RenterContract.create!(renter_id: louise.id, contract_id: contract19.id )
+renter_contract20 = RenterContract.create!(renter_id: nico.id, contract_id: contract19.id )
 
-renter_contract20 = RenterContract.create!(renter_id: henri.id, contract_id: contract20.id )
+renter_contract21 = RenterContract.create!(renter_id: giulia.id, contract_id: contract20.id )
 
-renter_contract21 = RenterContract.create!(renter_id: hugo.id, contract_id: contract21.id )
+renter_contract22 = RenterContract.create!(renter_id: fatima.id, contract_id: contract21.id )
 
-renter_contract22 = RenterContract.create!(renter_id: allan.id, contract_id: contract22.id )
+renter_contract23 = RenterContract.create!(renter_id: malo.id, contract_id: contract22.id )
 
-renter_contract23 = RenterContract.create!(renter_id: theotime.id, contract_id: contract23.id )
+renter_contract24 = RenterContract.create!(renter_id: raphaelle.id, contract_id: contract23.id )
 
-renter_contract24 = RenterContract.create!(renter_id: hugo.id, contract_id: contract24.id )
+renter_contract25 = RenterContract.create!(renter_id: imane.id, contract_id: contract24.id )
 
-renter_contract25 = RenterContract.create!(renter_id: charlotte.id, contract_id: contract25.id )
+renter_contract26 = RenterContract.create!(renter_id: joseph.id, contract_id: contract25.id )
 
 
 p "#{RenterContract.count} renter_contracts created"
