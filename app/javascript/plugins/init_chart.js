@@ -53,38 +53,44 @@ Chart.register(
 
 const initChartJS =  () => {
   const dataSet = document.querySelector('.main-dashboard').dataset
-  const datesExpensesLabel = Object.keys(JSON.parse(dataSet.expenses)).map((str) => `${str.split("-")[0]}-${str.split("-")[1]}`)
-  console.log (datesExpensesLabel)
-
-  console.log(datesExpensesLabel)
-  console.log(JSON.parse(dataSet.expenses))
-  const valuesExpenses = Object.values(JSON.parse(dataSet.expenses))
-
-  const datesRentsLabel = Object.keys(JSON.parse(dataSet.rents))
-  const valuesRents = Object.values(JSON.parse(dataSet.rents))
-  console.log(valuesRents)
-  console.log(typeof datesExpensesLabel[0])
-  const differentiel = []
-  datesExpensesLabel.forEach((element, index) => {
-    if ( datesRentsLabel.includes(element) ) {
-      // differentiel[index] = valuesRents[???????] - valuesExpenses[index]
-    }
-    else {
-      differentiel[index] = - valuesExpenses[index]
-    }
+  const expenses = {}
+  const rents = JSON.parse(dataSet.rents)
+  const profits = {}
+  const dataExpenses = JSON.parse(dataSet.expenses)
+  const tresuryLine = {}
+  Object.keys(dataExpenses).forEach((key) => {
+    const value = dataExpenses[key]
+    const newKey = key.split(" ")[0]
+    expenses[newKey] = value
   })
-  console.log(dataSet.rents)
-  console.log(datesRentsLabel)
-  console.log(valuesRents)
+
+  Object.keys(expenses).forEach((month, index) => { // Postulat que expenses continues (tous les mois)
+    const rent = (rents[month] === undefined) ? 0 : rents[month] // Si pas de rents
+    profits[month] = rent - expenses[month]
+    tresuryLine[month] = Object.values(profits).reduce((a, b) => a + b, 0)
+    console.log(tresuryLine)
+  })
+
+
+
+
   const myChart = new Chart(document.getElementById("bar-chart"), {
-    type: 'bar',
+
     data: {
-      labels: datesExpensesLabel,
+      labels: Object.keys(profits),
       datasets: [
         {
+          type: 'bar',
           label: "Profit (€)",
           backgroundColor: "#DAF552",
-          data: valuesExpenses
+          yAxisID: 'y',
+          data: Object.values(profits)
+        },
+        {
+          type: 'line',
+          label: 'Tresory Line',
+          yAxisID: 'y1',
+          data: Object.values(tresuryLine)
         }
       ]
     },
@@ -99,10 +105,19 @@ const initChartJS =  () => {
 
       scales: {
         x: {
-
           grid: {
             display: false
           }
+        },
+        y: {
+           type: 'linear',
+           display: true,
+           position: 'left',
+         },
+        y1: {
+           type: 'linear',
+           display: true,
+           position: 'right'
         }
       }
     }
