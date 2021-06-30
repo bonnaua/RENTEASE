@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_142038) do
+ActiveRecord::Schema.define(version: 2021_06_29_151737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,8 +107,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_142038) do
     t.float "amount"
     t.string "status"
     t.string "name"
-    t.date "start_date"
-    t.date "end_date"
+    t.string "date"
     t.bigint "contract_id", null: false
     t.bigint "housing_id", null: false
     t.datetime "created_at", precision: 6, null: false

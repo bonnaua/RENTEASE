@@ -3,6 +3,9 @@ class RentsController < ApplicationController
 
   def index
     @rents = Rent.all
+
+    # @rents = rents.joins(:housing).where(housings: { user: current_user })
+    @housings = Housing.where(user: current_user)
   end
 
   def show
@@ -41,6 +44,6 @@ class RentsController < ApplicationController
   end
 
   def rent_params
-    params.require(:rent).permit(:amount,:status,:name,:start_date,:end_date)
+    params.require(:rent).permit(:amount,:status,:name,:date)
   end
 end

@@ -420,3 +420,42 @@ renter_contract26 = RenterContract.create!(renter_id: joseph.id, contract_id: co
 
 p "#{RenterContract.count} renter_contracts created"
 p "#{Contract.count} contracts created"
+
+
+
+### RENTS ###
+
+p "destroying rents"
+Rent.destroy_all
+p "rents destroyed"
+
+Contract.all.each do |contract|
+  contract_duration = (contract.end_date - contract.start_date).ceil/30
+  start_month = contract.start_date.month
+  start_year = contract.start_date.year
+  months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
+  months_number = [1,2,3,4,5,6,7,8,9,10,11,12]
+  years = [2016,2017,2018,2019]
+
+  contract_duration.times do
+    Rent.create!(name: "Loyer", amount: "#{contract.rent + contract.rental_expenses}", date: "#{months[(start_month - 1)%12]} #{start_year}", contract_id: contract.id, housing_id: contract.housing.id)
+    start_month += 1
+    if start_month == 12
+      start_year += 1
+    end
+  end
+end
+
+p "#{Rent.count} rents created"
+
+
+
+
+
+
+
+
+
+
+
+

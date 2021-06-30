@@ -1,12 +1,41 @@
-<h1><%= "MY RENTS" %></h1>
 
-<% @rents.each do |rent| %>
-    <h3><%= rent.name %></h3>
-    <p><%= rent.species %></p>
-    <p><%=rent.amount%></p>
-    <p><%=rent.status%></p>
-    <p><%=rent.name%></p>
-    <p><%=rent.start_date%></p>
-    <p><%=rent.end_date%></p>
+<div class="list-housing">
 
-<% end %>
+<div class="container">
+  <div class="title-position">
+    <h1><%= "MY RENTS" %></h1>
+    <div class= "btn-outline">
+      <%= link_to "Add a rent", new_rent_path %>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="container-table">
+  <table class = "expense-table">
+    <tr>
+      <th>
+        <select class="select2" id="select-housing" name="housings">
+          <option value=all>Tous mes biens</option>
+          <% @housings.each do |housing| %>
+            <option value="housing-<%= housing.id %>"> <%= housing.name %> </option>
+          <% end %>
+        </select>
+      </th>
+      <th><%= "Date" %></th>
+      <th><%= "Libellé" %></th>
+      <th><%= "Prix" %></th>
+    </tr>
+
+    <% @rents.each do |rent| %>
+      <tr class="expense-row"
+          data-housing-id="housing-<%= rent.housing.id %>">
+        <td><%=rent.contract.housing.name%></td>
+        <td><%=rent.date%></td>
+        <td><%= rent.name %></td>
+        <td><%="#{rent.amount}€"%></td>
+        <!-- <td><%=rent.status%></td> -->
+      </tr>
+    <% end %>
+  </table>
+</div>
