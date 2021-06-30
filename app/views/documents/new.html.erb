@@ -6,6 +6,7 @@
     <%= f.input :name %>
     <%= f.label :category %>
     <%= f.select :category, ["Quittance de loyer", "Assurance habitation", "Contrat d'habitation"] %>
+    <%= f.input :pages, as: :file %>
     </div>
     <div>
       <%= f.button :submit, "Add the document"%>
