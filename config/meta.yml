@@ -1,0 +1,5 @@
+meta_product_name: "RentEase"
+meta_title: "RentEase - Gérez vos biens locatifs comme un professionnel ! 🏠"
+meta_description: "RentEase est un outil clé en main qui permet aux propriétaires de mieux gérer leur bail de location. Pilotez vos locations de manières professionnelles sans passer par des intermédiaires onéreux. Gardez un oeil sur votre comptabilité et investissez de manière astucieuse !"
+meta_image: "logo.svg" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
