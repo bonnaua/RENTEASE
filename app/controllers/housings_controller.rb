@@ -30,8 +30,11 @@ class HousingsController < ApplicationController
     @housing = Housing.new(housing_params)
     @housing.user = current_user
     @housing.save!
-
-    redirect_to new_housing_contract_path(@housing)
+    if params[:commit] == "Sauvegarder et retourner sur mon bien"
+      redirect_to housing_path(@housing)
+    else
+      redirect_to new_housing_contract_path(@housing)
+    end
   end
 
   def destroy

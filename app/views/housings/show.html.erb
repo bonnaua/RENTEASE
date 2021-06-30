@@ -11,8 +11,10 @@
     <% end %>
     <%= link_to root_path do %>  <!-- A MODIFIER -->
       <div class="card-housing-show-avatar">
-        <% if @housing.get_renter_avatar_on_housing.attached? %>
-          <%= cl_image_tag @housing.get_renter_avatar_on_housing.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
+        <% if @housing.contracts != [] %>
+          <% if @housing.get_renter_avatar_on_housing.attached? %>
+            <%= cl_image_tag @housing.get_renter_avatar_on_housing.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
+          <% end %>
         <% end %>
       </div>
     <% end %>
