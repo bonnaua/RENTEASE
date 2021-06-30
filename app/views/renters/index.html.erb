@@ -1,8 +1,11 @@
 
 <div class="container">
-  <br>
-  <h1> <%= "MY RENTERS" %></h1>
-  <br>
+  <div class="title-position">
+    <h1> <%= "MY RENTERS" %></h1>
+    <div class="btn-outline">
+      <%= link_to "Add a renter", new_renter_path %>
+    </div>
+  </div>
   <div class="renter-grid">
       <% @renters.each do |renter| %>
         <% if renter.renter_contracts.last.contract.housing.user == current_user %>
