@@ -2,10 +2,10 @@
 <!-- search bar -->
 <div class="container">
   <div class="title-position">
-    <h1><%= "MY HOUSES" %></h1>
+    <h1><%= "MES BIENS" %></h1>
 
     <div class="btn-outline">
-      <%= link_to "Add a house", new_housing_path %>
+      <%= link_to "Ajouter un bien", new_housing_path %>
     </div>
   </div>
   <div class="search-bar-position">
@@ -26,7 +26,7 @@
       <br>
       <div class="no-result-text">
         <% if @housings_search.size === 0 %>
-          <%= "No result found."  if params[:query].present?%>
+          <%= "Pas de résultat."  if params[:query].present?%>
         <% end %>
       </div>
     </div>
@@ -107,7 +107,7 @@
                       <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
                     </svg>
                     &nbsp;
-                    <p><%= "#{housing.nb_rooms} rooms" %></p>
+                    <p><%= "#{housing.nb_rooms} pièces" %></p>
                   </div>
                   <div class="d-flex">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bounding-box-circles" viewBox="0 0 16 16">

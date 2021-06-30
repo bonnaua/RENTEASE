@@ -40,3 +40,15 @@
 .expense-table tbody tr:last-of-type {
     border-bottom: 2px solid $flash;
 }
+
+td[scope="row1"] {
+    background-color: $blanc-2;
+}
+
+td[scope="row2"] {
+    background-color: #C2C2CD;
+}
+
+td[scope="row3"] {
+    background-color: #A0A0A9;
+}

@@ -31,6 +31,7 @@ import "bootstrap";
 import { initSelect2 } from '../plugins/init_select2';
 import {selectHousings} from '../plugins/select_expense';
 import {selectCategory} from '../plugins/select_expense';
+import {selectHousings2} from '../plugins/select_expense';
 import { dragElement } from '../components/searchbar';
 import { initMapbox } from '../plugins/init_mapbox';
 import {initChartJS} from '../plugins/init_chart';
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   selectHousings();
   selectCategory();
+  selectHousings2();
   initChartJS();
 
   if (document.getElementById('btn-expenses')) {
