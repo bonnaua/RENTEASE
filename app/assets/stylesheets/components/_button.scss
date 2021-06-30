@@ -226,17 +226,17 @@ $inner-shadow: 0 0 15px rgba(0,0,0,0.2),
 
 
 .btn-accounting-tabs {
-  width: 32.5%;
+  width: 47%;
   height: 4rem;
   border: none;
   border-radius: 4px;
   font-size: 1.4rem;
-  //padding-left: 1.8rem;
   box-shadow: $inner-shadow;
   background: none;
   font-family: inherit;
-  color: #C58C6D;
+  color: $gris;
   margin:10px;
+  justify-content: space-around;
 
   &:focus {
     outline: none;
