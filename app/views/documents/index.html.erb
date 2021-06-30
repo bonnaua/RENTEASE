@@ -1,16 +1,56 @@
 <div class="container">
-  <table>
-    <% @documents.each do |document| %>
-      <tr class="expense-row">
-        <td><%= document.housing.name%></td>
-        <td><%= document.category%></td>
-        <td><%= document.name%></td>
-        <td>
-        <% if document.pages.attached? %>
-          <%= link_to "voir le pdf", cl_image_path(document.pages.key, format: :jpg), target: "_blank" %>
+  <div class="title-position">
+    <h1><%= "MES DOCUMENTS" %></h1>
+  </div>
+
+  <div class="cards-display-documents">
+    <p class="card-ch"><%= "Contrat d'habitation" %></p>
+    <p class="card-ah"><%= "Assurance habitation" %></p>
+    <p class="card-ql"><%= "Quittance de loyer" %></p>
+  </div>
+
+  <div class="container-table">
+    <table class="expense-table">
+      <th><%= "Tous mes biens" %></th>
+      <th><%= "Type de document" %></th>
+      <th><%= "Libellé" %></th>
+      <th><%= "Lien" %></th>
+      <% @documents.each do |document| %>
+        <% if document.category == "Contrat d'habitation" %>
+          <tr class="expense-row">
+            <td><%= document.housing.name%></td>
+            <td scope="row1"><%= document.category%></td>
+            <td><%= document.name%></td>
+            <td>
+            <% if document.pages.attached? %>
+              <%= link_to "voir le pdf", cl_image_path(document.pages.key, format: :jpg), target: "_blank" %>
+            <% end %>
+            </td>
+          </tr>
+        <% elsif document.category == "Assurance habitation" %>
+          <tr class="expense-row">
+            <td><%= document.housing.name%></td>
+            <td scope="row2"><%= document.category%></td>
+            <td><%= document.name%></td>
+            <td>
+            <% if document.pages.attached? %>
+              <%= link_to "voir le pdf", cl_image_path(document.pages.key, format: :jpg), target: "_blank" %>
+            <% end %>
+            </td>
+          </tr>
+        <% else %>
+          <tr class="expense-row">
+            <td><%= document.housing.name%></td>
+            <td scope="row3"><%= document.category%></td>
+            <td><%= document.name%></td>
+            <td>
+            <% if document.pages.attached? %>
+              <%= link_to "voir le pdf", cl_image_path(document.pages.key, format: :jpg), target: "_blank" %>
+            <% end %>
+            </td>
+          </tr>
         <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+      <% end %>
+    </table>
+  </div>
 </div>

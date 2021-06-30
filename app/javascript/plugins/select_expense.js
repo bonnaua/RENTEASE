@@ -39,10 +39,25 @@ const selectCategory = () => {
 
 const selectDouble = () => {
   const allExpenses = document.querySelectorAll('.expense-row')
-
-
-
 }
 export {selectHousings};
 export {selectCategory};
 
+
+
+const selectHousings2 = () => {
+  const houseField2 = document.getElementById('select-housing2');
+  if (!houseField2) return ;
+  houseField2.onchange = () => {
+    const allRents = document.querySelectorAll('.rent-row:not(.d-none)')
+    const rentsSelected = document.querySelectorAll(`[data-housing-id="${houseField2.value}"]`);
+    if (!(houseField2.value == "all")) {
+      allRents.forEach(rent => rent.classList.add('d-none'));
+      rentsSelected.forEach(rent => rent.classList.remove('d-none'));
+    } else {
+      allRents.forEach(rent => rent.style.display = null);
+    };
+  }
+}
+
+export {selectHousings2};
