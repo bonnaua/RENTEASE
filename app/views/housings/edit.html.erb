@@ -1,21 +1,64 @@
-<div class="container">
-  <h2>Edit a housing</h2>
+<br>
+<div id="form-container-rentease">
+  <div class="row">
+    <h4>AJOUTER UN BIEN</h4>
+  </div>
   <br>
   <%= simple_form_for(@housing) do |f| %>
-    <div>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :description %>
-    <%= f.input :nb_rooms %>
-    <%= f.input :surface %>
-    <%= f.label :category %>
-    <%= f.select :category, ["Appartement", "Maison", "Loft", "Atelier", "Duplex", "Chambre"] %>
-    <%= f.label :status %>
-    <%= f.select :status, ["Loué", "Disponible", "Indisponible"] %>
-    <%= f.input :photo, as: :file %>
+    <div class="form-inputs">
+      <div class="row">
+        <div class= "col-half">
+          <%= f.input :name, label: false, placeholder: "Nom du bien" %>
+        </div>
+        <div class= "col-half">
+          <div>
+            <%= f.select :category, ["Appartement", "Maison", "Loft", "Atelier", "Duplex", "Chambre"], label: false, placeholder: "Catégorie" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half">
+          <h4>Adresse</h4>
+          <%= f.input :address, label: false %>
+        </div>
+        <div class="col-half">
+          <h4>Description</h4>
+          <%= f.input :description, label: false %>
+        </div>
+        <br>
+        <br>
+      </div>
+      <div class="row">
+        <div class= "col-half">
+          <h4>Nombre de pièces</h4>
+          <%= f.input :nb_rooms, label: false %>
+        </div>
+        <div class= "col-half">
+          <div>
+            <h4>Surface</h4>
+            <%= f.input :surface, label: false %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class= "col-half">
+          <div>
+              <h4>Statut</h4>
+             <%= f.select :status, ["Loué", "Disponible", "Indisponible"] %>
+          </div>
+        </div>
+        <div class= "col-half">
+          <h4>Photo du bien</h4>
+          <%= f.input :photo, as: :file, label: false %>
+        </div>
+      </div>
+      <hr size="1" width="100%" color="#DAF552">
     </div>
-    <div>
-      <%= f.button :submit, "Update my house"%>
-    </div>
+    <div class="row button-form">
+      <div class="btn-signup-form">
+        <%= f.button :submit, "Sauvegarder"%>
+      </div>
+      </div>
   <% end %>
 </div>
+<br>

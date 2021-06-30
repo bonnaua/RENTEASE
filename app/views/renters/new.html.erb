@@ -1,17 +1,57 @@
-<div class="container">
-  <h2>Ajouter un locataire</h2>
+<br>
+<br>
+<br>
+<br>
+<div id="form-container-rentease">
+  <div class="row">
+    <h4>AJOUTER UN LOCATAIRE</h4>
+  </div>
   <br>
   <%= simple_form_for([@contract, @renter]) do |f| %>
-    <div>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :email %>
-    <%= f.input :phone_number %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
+    <div class="form-inputs">
+      <div class="row">
+        <div class= "col-half">
+          <h4>Prénom</h4>
+          <%= f.input :first_name, label: false, placeholder: "Thomas" %>
+        </div>
+        <div class= "col-half">
+          <div>
+            <h4>Nom</h4>
+          <%= f.input :last_name, label: false, placeholder: "De la Pince" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class= "col-half">
+          <h4>Adresse mail</h4>
+          <%= f.input :email, label: false, placeholder: "thomas@email.com" %>
+        </div>
+        <div class= "col-half">
+          <div>
+          <h4>Numéro de téléphone</h4>
+          <%= f.input :phone_number, label: false, placeholder: "06 78 65 45 34" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class= "col-half">
+          <h4>Description</h4>
+          <%= f.input :description, label: false, placeholder: "Podologue de 35 ans" %>
+        </div>
+        <div class= "col-half">
+          <h4>Photo du locataire</h4>
+          <%= f.input :photo, label: false, as: :file %>
+        </div>
+      </div>
+      <hr size="1" width="100%" color="#DAF552">
     </div>
-    <div>
-      <%= f.button :submit, "Ajouter le locataire"%>
+   <div class="row button-form">
+      <div class="btn-signup-form">
+        <%= f.button :submit, "Continuer et ajouter un document"%>
+      </div>
+    </div>
+    <div class="row button-form">
+      <button class="btn-form">Sauvegarder et retourner sur mon bien</button>
     </div>
   <% end %>
 </div>
