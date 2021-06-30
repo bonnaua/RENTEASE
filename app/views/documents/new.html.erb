@@ -1,15 +1,33 @@
-<div class="container">
-  <h2>Add a document</h2>
+<br>
+<br>
+<br>
+<br>
+<div id="form-container-rentease">
+  <div class="row">
+    <h4>AJOUTER UN DOCUMENT</h4>
+  </div>
   <br>
   <%= simple_form_for([@housing, @document]) do |f| %>
-    <div>
-    <%= f.input :name %>
-    <%= f.label :category %>
-    <%= f.select :category, ["Quittance de loyer", "Assurance habitation", "Contrat d'habitation"] %>
-    <%= f.input :pages, as: :file %>
+    <div class="form-inputs">
+      <div class="row">
+        <div class= "col-half">
+          <%= f.input :name, label: false, placeholder: "Nom du document" %>
+        </div>
+        <div class= "col-half">
+          <div>
+            <%= f.select :category, ["Quittance de loyer", "Assurance habitation", "Contrat d'habitation"], label: false, placeholder: "Catégorie" %>
+          </div>
+        </div>
     </div>
-    <div>
-      <%= f.button :submit, "Add the document"%>
+    <br>
+    <h4>Télécharger le document</h4>
+    <%= f.input :pages, as: :file, label: false %>
+    <hr size="1" width="100%" color="#DAF552">
+    </div>
+    <div class="row button-form">
+      <div class="btn-signup-form">
+        <%= f.button :submit, "Ajouter et retourner sur mon bien"%>
+      </div>
     </div>
   <% end %>
 </div>

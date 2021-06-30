@@ -4,7 +4,7 @@ class Contract < ApplicationRecord
   has_many :renter_contracts, dependent: :destroy
   has_many :renters, through: :renter_contracts
 
-  validates :start_date, :end_date, :rent_due_date, :rent, :rental_expenses, presence: true
+  validates :start_date, :end_date, :rent, :rental_expenses, presence: true
 
   def get_renter_avatar
     self.renter_contracts.each do |renter_contract|

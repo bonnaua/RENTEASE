@@ -45,10 +45,16 @@
 
 .btn-form {
   align-items: center;
-  color: #DAF552;
+  color: #black;
   border: 1px solid #F5F5F5;
   background-color: transparent;
+  font-weight: solid;
 }
+
+.btn-form:hover {
+  color: $flash;
+}
+
 .btn-outline:hover {
   opacity: 1;
 }

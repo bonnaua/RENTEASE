@@ -5,7 +5,7 @@
     <h1><%= "MES BIENS" %></h1>
 
     <div class="btn-outline">
-      <%= link_to "Ajouter un bien", new_housing_path %>
+      <%= link_to "Ajouter un nouveau bien", new_housing_path %>
     </div>
   </div>
   <div class="search-bar-position">
@@ -17,7 +17,7 @@
               <%= text_field_tag :query,
                    params[:query],
                    class: "search__input w-100",
-                   placeholder: "Search for houses here..."
+                   placeholder: "Trouver un de mes biens..."
                  %>
             </div>
           <% end %>
@@ -26,7 +26,7 @@
       <br>
       <div class="no-result-text">
         <% if @housings_search.size === 0 %>
-          <%= "Pas de résultat."  if params[:query].present?%>
+          <%= "Aucun résultat trouvé..."  if params[:query].present?%>
         <% end %>
       </div>
     </div>

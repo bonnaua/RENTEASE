@@ -1,10 +1,7 @@
 <br>
-<br>
-<br>
-<br>
 <div id="form-container-rentease">
   <div class="row">
-  <h4>AJOUTER UN BIEN</h4>
+    <h4>AJOUTER UN BIEN</h4>
   </div>
   <br>
   <%= simple_form_for(@housing) do |f| %>
@@ -21,21 +18,25 @@
       </div>
       <div class="row">
         <div class="col-half">
-          <%= f.input :address, placeholder: "Addresse", label: false %>
+          <h4>Adresse</h4>
+          <%= f.input :address, label: false, placeholder: "28 rue Jeanne Maillotte 59800 Lille" %>
         </div>
         <div class="col-half">
-          <%= f.input :description, placeholder: "Description", label: false %>
+          <h4>Description</h4>
+          <%= f.input :description, label: false, placeholder: "Cour intérieure, maison rénovée, a proximité du centre ville" %>
         </div>
         <br>
         <br>
       </div>
       <div class="row">
         <div class= "col-half">
-          <%= f.input :nb_rooms, placeholder: "Nombre de chambres", label: false %>
+          <h4>Nombre de pièces</h4>
+          <%= f.input :nb_rooms, label: false, placeholder: "4" %>
         </div>
         <div class= "col-half">
           <div>
-            <%= f.input :surface, placeholder: "Surface", label: false %>
+            <h4>Surface</h4>
+            <%= f.input :surface, label: false, placeholder: "90" %>
           </div>
         </div>
       </div>
@@ -54,13 +55,13 @@
       <hr size="1" width="100%" color="#DAF552">
     </div>
     <div class="row button-form">
-      <div class="btn-outline">
-        <%= f.button :submit, "Ajouter un contrat  ->"%>
+      <div class="btn-signup-form">
+        <%= f.button :submit, "Continuer et ajouter un contrat"%>
       </div>
       </div>
-      <div class="row button-form">
-      <button class="btn-form">Sauvegarder et retourner à mes biens</button>
-      </div>
-
+    <div class="row button-form">
+      <button class="btn-form">Sauvegarder et retourner sur mon bien</button>
+    </div>
   <% end %>
 </div>
+<br>

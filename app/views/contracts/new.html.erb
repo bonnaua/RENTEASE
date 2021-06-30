@@ -1,16 +1,51 @@
-<div class="container">
-  <h2>Ajouter le contrat</h2>
+<br>
+<br>
+<br>
+<br>
+<div id="form-container-rentease">
+  <div class="row">
+    <h4>AJOUTER UN CONTRAT</h4>
+  </div>
   <br>
   <%= simple_form_for([@housing, @contract]) do |f| %>
-    <div>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :rent_due_date %>
-    <%= f.input :rent %>
-    <%= f.input :rental_expenses %>
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-half">
+          <div>
+            <h4>Date de début</h4>
+            <%= f.input :start_date, as: :date, html5: true, label: false %>
+          </div>
+        </div>
+        <div class="col-half">
+          <div>
+            <h4>Date de fin</h4>
+            <%= f.input :end_date, as: :date, html5: true, label: false %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-half">
+          <div>
+            <h4>Loyer hors charges</h4>
+            <%= f.input :rent, label: false, placeholder: "0,00€" %>
+          </div>
+        </div>
+        <div class="col-half">
+          <div>
+            <h4>Charges locatives</h4>
+            <%= f.input :rental_expenses, label: false, placeholder: "0,00€" %>
+          </div>
+        </div>
+      </div>
+      <hr size="1" width="100%" color="#DAF552">
     </div>
-    <div>
-      <%= f.button :submit, "Ajouter le contrat"%>
+    <div class="row button-form">
+      <div class="btn-signup-form">
+        <%= f.button :submit, "Continuer et ajouter un locataire"%>
+      </div>
+    </div>
+    <div class="row button-form">
+      <button class="btn-form">Sauvegarder et retourner sur mon bien</button>
     </div>
   <% end %>
 </div>
