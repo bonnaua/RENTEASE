@@ -56,10 +56,24 @@ const initChartJS =  () => {
   if (!dataSetElement) return ;
   const dataSet = dataSetElement.dataset;
   const expenses = {}
-  const rents = JSON.parse(dataSet.rents)
   const profits = {}
+  const rents = JSON.parse(dataSet.rents)
   const dataExpenses = JSON.parse(dataSet.expenses)
   const tresuryLine = {}
+
+  // date transformation for Rents
+  // Object.keys(dataRents).forEach((key) => {
+  //   // console.log(key)
+  //   const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
+  //   const months_number = ["01","02","03","04","05","06","07","08","09","10","11","12"]
+  //   const value = dataRents[key]
+  //   const monthLetter = key.split(" ")[0]
+  //   const newKey = `${key.split(" ")[1]}-${months_number[months.indexOf(monthLetter)]}-01`// "2016-06-01"
+
+  //   rents[newKey] = value
+  // })
+
+  // date transformation for Expenses
   Object.keys(dataExpenses).forEach((key) => {
     const value = dataExpenses[key]
     const newKey = key.split(" ")[0]
@@ -71,6 +85,10 @@ const initChartJS =  () => {
     profits[month] = rent - expenses[month]
     tresuryLine[month] = Object.values(profits).reduce((a, b) => a + b, 0)
   })
+  console.log(rents)
+
+  console.log(expenses)
+  console.log(profits)
   const ctx = document.getElementById("bar-chart")
   ctx.style.height = "450px";
   ctx.style.width = "900px";
