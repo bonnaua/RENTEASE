@@ -1,9 +1,16 @@
 <div class="container">
   <div class="card-housing-show">
     <div class="title-position">
-      <h3><%= @housing.name %></h3>
-      <div class="btn-outline">
-        <%= link_to "Modifier", edit_housing_path(@housing) %>
+      <div>
+        <h3><%= @housing.name %></h3>
+      </div>
+      <div class="title-position">
+        <div class="btn-outline">
+          <%= link_to "Modifier", edit_housing_path(@housing) %>
+        </div>
+        <div class="btn-outline">
+          <%= link_to "Ajouter un nouveau locataire", new_housing_contract_path(@housing) %>
+        </div>
       </div>
     </div>
     <% if @housing.photo.attached? %>

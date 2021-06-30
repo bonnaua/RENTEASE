@@ -1,10 +1,6 @@
-
 <div class="container">
   <div class="title-position">
     <h1> <%= "MES LOCATAIRES" %></h1>
-    <div class="btn-outline">
-      <%= link_to "Add a renter", new_renter_path %>
-    </div>
   </div>
   <div class="renter-grid">
       <% @renters.each do |renter| %>
