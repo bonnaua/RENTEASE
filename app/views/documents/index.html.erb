@@ -5,6 +5,11 @@
         <td><%= document.housing.name%></td>
         <td><%= document.category%></td>
         <td><%= document.name%></td>
+        <td>
+        <% if document.pages.attached? %>
+          <%= link_to "voir le pdf", cl_image_path(document.pages.key, format: :jpg), target: "_blank" %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </table>
