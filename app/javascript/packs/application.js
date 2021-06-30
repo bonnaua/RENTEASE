@@ -43,4 +43,8 @@ document.addEventListener('turbolinks:load', () => {
   selectHousings();
   selectCategory();
   initChartJS();
+
+  if (document.getElementById('btn-expenses')) {
+    displayAccounting();
+  }
 });
