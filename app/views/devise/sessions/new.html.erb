@@ -20,7 +20,7 @@
         <br>
         <br>
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class: "btn-ghost btn-devise-form" %>
+          <%= f.button :submit, "Log in", class: "btn-ghost btn-devise-form btn-submit" %>
         </div>
       <% end %>
     </div>
@@ -34,7 +34,7 @@
       </div>
       <div class="sign-up-btn-container">
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-          <%= link_to "Sign Up", new_registration_path(resource_name), class: "btn-signup-form-flash-version"%><br />
+          <%= link_to "Sign Up", new_registration_path(resource_name), class: "btn-signup-form-flash-version btn-submit"%><br />
         <% end %>
       </div>
     </div>
