@@ -6,10 +6,11 @@
       <% @renters.each do |renter| %>
         <% if renter.renter_contracts.last.contract.housing.user == current_user %>
           <div class="card-renter">
+            <div class="cross-delete"><i class="far fa-times-circle"></i></div>
               <% if renter.photo.attached? %>
                 <%= cl_image_tag renter.photo.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
               <% end %>
-              <h3><%= link_to "#{renter.first_name} #{renter.last_name}", renter_path(renter) %> </h3>
+              <h3><%= "#{renter.first_name} #{renter.last_name.upcase}" %> </h3>
               <p><%= renter.description %></p>
 
             <hr size="1" width="90%" color="#DAF552">
@@ -44,4 +45,6 @@
         <% end %>
       <% end %>
   </div>
+  <br>
+  <br>
 </div>
