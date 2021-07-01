@@ -237,3 +237,114 @@
   text-align: center;
 }
 
+// REVIEW //
+
+.container-testi *{
+  box-sizing: border-box
+}
+.container-testi body{
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  font-weight: 100;
+  color: #777;
+}
+.container-testi{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-testi .testimonial-card{
+  min-height: 400px;
+  width: 350px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.3);
+  display: flex;
+  flex-flow: column;
+  justify-content:space-between;
+
+}
+.container-testi .text{
+  padding: 2.2em;
+  line-height: 1.7em;
+  position: relative;
+  font-size: 18px;
+}
+.container-testi .image-1{
+  background-color:tomato;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background:no-repeat center/cover url(https://images.unsplash.com/photo-1623685462866-1f6fd75d0f25?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=384&q=80);
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display:flex;
+  justify-content:center;
+}
+
+
+.container-testi .image-2{
+  background-color:tomato;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background:no-repeat center/cover url(https://images.unsplash.com/photo-1622692381792-9af7e3116c09?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80);
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display:flex;
+  justify-content:center;
+}
+
+.container-testi .image-3{
+  background-color:tomato;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background:no-repeat center/cover url(https://images.unsplash.com/photo-1520853504280-249b72dc947c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80);
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display:flex;
+  justify-content:center;
+}
+
+.container-testi .footer-card{
+  background: linear-gradient(90deg, $flash 0%, $flash 100%);
+  height: 140px;
+  border-radius: 0 0 10px 10px;
+  position:relative;
+
+}
+
+.container-testi .quote{
+  font-size: 400%;
+  float: right;
+  opacity: .1;
+  transform: rotate(10deg) translate(-10px, -40px);
+ color:#4D3FA3;
+}
+
+.container-testi .person{
+  color:black;
+  position: absolute;
+  top: 96%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size:1.5rem;
+  font-weight: 600;
+}
+
+.container-testi .person .lighter{
+  font-weight: lighter;
+  font-size: 20px;
+}
