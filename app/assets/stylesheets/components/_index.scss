@@ -12,6 +12,7 @@
 @import "chart";
 @import "mark";
 @import "forms";
+@import "footer";
 
 
 .title-position {
@@ -20,5 +21,10 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+}
+
+.title-housing-show {
+  margin: 0 !important;
+  font-size: 18px;
 }
 

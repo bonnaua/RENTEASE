@@ -107,7 +107,7 @@ const initChartJS =  () => {
         },
         {
           type: 'line',
-          label: 'Tresory Line',
+          label: 'Ligne de Trésorerie (€)',
           yAxisID: 'y1',
           data: Object.values(tresuryLine)
         }
@@ -116,10 +116,6 @@ const initChartJS =  () => {
     options: {
       plugins: {
         legend: { display: true },
-        title: {
-          display: true,
-          text: 'Profit over the last year'
-        }
       },
       responsive: false,
 
@@ -131,7 +127,7 @@ const initChartJS =  () => {
         },
         y: {
            type: 'linear',
-           display: true,
+           display: false,
            position: 'left',
          },
         y1: {

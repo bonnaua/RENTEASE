@@ -17,7 +17,8 @@ class HousingsController < ApplicationController
       {
         lat: housing.latitude,
         lng: housing.longitude,
-        image_url: helpers.asset_url('location.svg')
+        image_url: helpers.asset_url('location.svg'),
+        info_window: render_to_string(partial: "info_window", locals: { housing: @housing })
       }
     end
   end

@@ -243,9 +243,9 @@ $inner-shadow: 0 0 15px rgba(0,0,0,0.2),
   color: $gris;
   margin:10px;
   justify-content: space-around;
+}
 
-  &:focus {
-    outline: none;
-    box-shadow: $shadow;
-  }
+.btn-accounting-active {
+  outline: none;
+  box-shadow: $shadow;
 }
