@@ -1,18 +1,47 @@
-<div class="container">
-  <h2>Ajouter une dépense</h2>
+<br>
+<br>
+<br>
+<br>
+<div id="form-container-rentease">
+  <div class="row">
+    <h4>AJOUTER UN DOCUMENT</h4>
+  </div>
   <br>
   <%= simple_form_for(@expense) do |f| %>
-    <div>
-    <%= f.input :name %>
-    <%= f.association :housing, collection: Housing.where(user: current_user) %>
-    <%= f.label :category %>
-    <%= f.select :category, ["Taxes foncières", "Charges locatives", "Charges copropriété", "Rénovation", "Prêt"] %>
-    <%= f.input :description %>
-    <%= f.input :amount %>
-
+    <div class="form-inputs">
+    <div class="row">
+        <div class= "col-half">
+          <h4>Nom *</h4>
+          <%= f.input :name, label: false, placeholder: "Ex: bail M. De Pince" %>
+        </div>
+        <div class= "col-half">
+          <div>
+            <h4>Bien * </h4>
+          <%= f.association :housing, collection: Housing.where(user: current_user), label: false, require: true %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class= "col-half">
+          <h4>Montant / mois *</h4>
+          <%= f.input :amount, label: false, placeholder: "Ex: 1300€" %>
+        </div>
+        <div class= "col-half">
+          <div>
+            <h4>Catégorie * </h4>
+            <%= f.select :category, ["Taxes foncières", "Charges locatives", "Charges copropriété", "Rénovation", "Prêt"], label: false %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <h4>Description</h4>
+      <%= f.input :description, label: false %>
+      <hr size="1" width="100%" color="#DAF552">
     </div>
-    <div>
-      <%= f.button :submit, "Ajouter une dépense"%>
-    </div>
+     <div class="row button-form">
+        <div class="btn-signup-form">
+          <%= f.button :submit, "Ajouter une dépense"%>
+        </div>
+      </div>
   <% end %>
 </div>

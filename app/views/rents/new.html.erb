@@ -1,1 +1,48 @@
-
+<br>
+<br>
+<br>
+<br>
+<div id="form-container-rentease">
+  <div class="row">
+    <h4>AJOUTER UN LOYER</h4>
+  </div>
+  <br>
+  <%= simple_form_for(@rent) do |f| %>
+    <div class="form-inputs">
+      <h4>Nom *</h4>
+      <%= f.input :name, label: false, placeholder: "Ex: Loyer " %>
+    <div class="row">
+        <div class= "col-half">
+          <h4>Bien * </h4>
+          <%= f.association :housing, collection: Housing.where(user: current_user), label: false %>
+        </div>
+        <div class= "col-half">
+          <div>
+          <h4>Bail de location * </h4>
+          <select class="select2" id="select-contract"></select>
+          <%= f.input :contract_id, id: "contract_id-input", label: false %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class= "col-half">
+          <h4>Date *</h4>
+          <%= f.input :date, label: false%>
+        </div>
+        <div class= "col-half">
+          <div>
+            <h4>Montant * </h4>
+            <%= f.input :amount, label: false, placeholder: "Ex: 1500€" %>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr size="1" width="100%" color="#DAF552">
+    </div>
+     <div class="row button-form">
+        <div class="btn-signup-form">
+          <%= f.button :submit, "Ajouter un loyer"%>
+        </div>
+      </div>
+  <% end %>
+</div>

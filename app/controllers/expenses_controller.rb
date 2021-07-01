@@ -23,9 +23,11 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
     @housing = Housing.find(params[:expense][:housing_id])
     @expense.housing = @housing
-    @expense.save!
-
-    redirect_to expenses_path
+    if @expense.save
+      redirect_to expenses_path
+    else
+      render :new
+    end
   end
 
   def destroy

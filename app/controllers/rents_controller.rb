@@ -17,10 +17,14 @@ class RentsController < ApplicationController
 
   def create
     @rent = Rent.new(rent_params)
-    @rent.user = current_user
-    @rent.save!
-
-    redirect_to rent_path(@rent)
+    @contract = Contract.find(params[:rent][:contract_id])
+    @rent.contract = @contract
+    @rent.housing = @contract.housing
+    if @rent.save!
+      redirect_to rent_path(@rent)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -44,6 +48,6 @@ class RentsController < ApplicationController
   end
 
   def rent_params
-    params.require(:rent).permit(:amount,:status,:name,:date)
+    params.require(:rent).permit(:amount, :name, :date, :housing)
   end
 end
