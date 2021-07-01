@@ -3,7 +3,7 @@ class Housing < ApplicationRecord
   has_many :documents, dependent: :destroy
   has_many :contracts, dependent: :destroy
   has_many :expenses, dependent: :destroy
-  has_many :rents, dependent: :destroy
+  has_many :rents, through: :contracts
   has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
