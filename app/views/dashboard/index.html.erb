@@ -4,17 +4,29 @@
     <div class="card-dashboard">
         <h2>Mes Profits</h2>
         <p>de l'année dernière</p>
-        <h3 class="amount-card"><strong> <%=  (@profit_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= ((@profit_over_the_last_year - @profit_two_years)*100/@profit_two_years).round() %>%)</span></h3>
+        <% if (@profit_over_the_last_year.to_f.nan? && @profit_two_years.to_f.nan?) %>
+          <h3>oui</h3>
+        <% else %>
+          <h3 class="amount-card"><strong> <%=  (@profit_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= @profit_two_years == 0 ? "-" : ((@profit_over_the_last_year - @profit_two_years)*100/@profit_two_years).round() %>%)</span></h3>
+        <% end %>
     </div>
     <div class="card-dashboard">
         <h2>Mes Revenus</h2>
         <p>de l'année dernière</p>
-        <h3 class="amount-card"><strong>+ <%=  (@rents_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= ( @rents_two_years == 0 ) ? "-" : ((@rents_over_the_last_year - @rents_two_years)*100/@rents_two_years).round() %>%)</span></h3>
+        <% if (@rents_over_the_last_year.to_f.nan? && @rents_two_years.to_f.nan?) %>
+          <h3>oui</h3>
+        <% else %>
+          <h3 class="amount-card"><strong> <%=  (@rents_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= @rents_two_years == 0 ? "-" : ((@rents_over_the_last_year - @rents_two_years)*100/@rents_two_years).round() %>%)</span></h3>
+        <% end %>
     </div>
     <div class="card-dashboard">
         <h2>Mes Frais</h2>
         <p>de l'année dernière</p>
-        <h3 class="amount-card"><strong>- <%=  (@expenses_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= ((@expenses_over_the_last_year - @expenses_two_years)*100/@expenses_two_years).round() %>%)</span></h3>
+        <% if (@expenses_over_the_last_year.to_f.nan? && @expenses_two_years.to_f.nan?) %>
+          <h3>oui</h3>
+        <% else %>
+          <h3 class="amount-card"><strong> <%=  (@expenses_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= @expenses_two_years == 0 ? "-" : ((@expenses_over_the_last_year - @expenses_two_years)*100/@expenses_two_years).round() %>%)</span></h3>
+        <% end %>
     </div>
   </div>
 

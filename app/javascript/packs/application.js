@@ -37,6 +37,10 @@ import { initMapbox } from '../plugins/init_mapbox';
 import {initChartJS} from '../plugins/init_chart';
 import { displayAccounting } from '../components/accounting_btn';
 
+document.addEventListener('turbolinks:visit', () => {
+  $('#loading').show();
+});
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
@@ -45,8 +49,18 @@ document.addEventListener('turbolinks:load', () => {
   selectCategory();
   selectHousings2();
   initChartJS();
+  $('#loading').hide();
 
   if (document.getElementById('btn-expenses')) {
     displayAccounting();
+  }
+  if (document.querySelector('.btn-submit')) {
+    const btns = document.querySelectorAll('.btn-submit');
+    btns.forEach((btn) => {
+      btn.addEventListener('click', (event) => {
+        const loader = document.getElementById('loading');
+        loader.style.display = null;
+      });
+    });
   }
 });
