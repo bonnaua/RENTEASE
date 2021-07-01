@@ -18,13 +18,15 @@ class RentersController < ApplicationController
   def create
     @renter = Renter.new(renter_params)
     @contract = Contract.find(params[:contract_id])
-    @renter.save!
-
-    @renter_contract = RenterContract.create(contract: @contract, renter: @renter)
-    if params[:commit] == "Sauvegarder et retourner sur mon bien"
-      redirect_to housing_path(@contract.housing)
+    if @renter.save
+      @renter_contract = RenterContract.create(contract: @contract, renter: @renter)
+      if params[:commit] == "Sauvegarder et retourner sur mon bien"
+        redirect_to housing_path(@contract.housing)
+      else
+        redirect_to new_housing_document_path(@contract.housing)
+      end
     else
-      redirect_to new_housing_document_path(@contract.housing)
+      render :new
     end
   end
 

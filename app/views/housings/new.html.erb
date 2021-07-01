@@ -8,47 +8,49 @@
     <div class="form-inputs">
       <div class="row">
         <div class= "col-half">
-          <%= f.input :name, label: false, placeholder: "Nom du bien" %>
+          <h4>Nom *</h4>
+          <%= f.input :name, label: false, placeholder: "Ex: Appartement J. Maillotte" %>
         </div>
         <div class= "col-half">
           <div>
+            <h4>Catégorie *</h4>
             <%= f.select :category, ["Appartement", "Maison", "Loft", "Atelier", "Duplex", "Chambre"], label: false, placeholder: "Catégorie" %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-half">
-          <h4>Adresse</h4>
-          <%= f.input :address, label: false, placeholder: "28 rue Jeanne Maillotte 59800 Lille" %>
+          <h4>Adresse *</h4>
+          <%= f.input :address, label: false, placeholder: "Ex: 28 rue Jeanne Maillotte 59800 Lille" %>
         </div>
         <div class="col-half">
           <h4>Description</h4>
-          <%= f.input :description, label: false, placeholder: "Cour intérieure, maison rénovée, a proximité du centre ville" %>
+          <%= f.input :description, label: false, placeholder: "Ex: Cour intérieure, maison rénovée, a proximité du centre ville" %>
         </div>
         <br>
         <br>
       </div>
       <div class="row">
         <div class= "col-half">
-          <h4>Nombre de pièces</h4>
-          <%= f.input :nb_rooms, label: false, placeholder: "4" %>
+          <h4>Nombre de pièces *</h4>
+          <%= f.input :nb_rooms, label: false, placeholder: "Ex: 4" %>
         </div>
         <div class= "col-half">
           <div>
-            <h4>Surface</h4>
-            <%= f.input :surface, label: false, placeholder: "90" %>
+            <h4>Surface *</h4>
+            <%= f.input :surface, label: false, placeholder: "Ex: 90" %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class= "col-half">
           <div>
-              <h4>Statut</h4>
+              <h4>Statut *</h4>
              <%= f.select :status, ["Loué", "Disponible", "Indisponible"] %>
           </div>
         </div>
         <div class= "col-half">
-          <h4>Photo du bien</h4>
+          <h4>Photo du bien *</h4>
           <%= f.input :photo, as: :file, label: false %>
         </div>
       </div>

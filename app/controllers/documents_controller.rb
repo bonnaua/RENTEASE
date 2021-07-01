@@ -12,9 +12,11 @@ class DocumentsController < ApplicationController
     @document = Document.new(document_params)
     @housing = Housing.find(params[:housing_id])
     @document.housing = @housing
-    @document.save!
-
-    redirect_to housing_path(@housing)
+    if @document.save
+      redirect_to housing_path(@housing)
+    else
+      render :new
+    end
   end
 
   def new

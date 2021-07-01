@@ -12,9 +12,11 @@ class ContractsController < ApplicationController
     @contract = Contract.new(contract_params)
     @housing = Housing.find(params[:housing_id])
     @contract.housing = @housing
-    @contract.save!
-
-    redirect_to new_contract_renter_path(@contract)
+    if @contract.save
+      redirect_to new_contract_renter_path(@contract)
+    else
+     render :new
+    end
   end
 
   private

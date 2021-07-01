@@ -79,8 +79,11 @@
         <p><%= "Loyer: #{contract.rent.round}€" %></p>
         <p><%= "Charges: #{contract.rental_expenses.round}€" %></p>
         <p class="contract-price"><%= "Total: #{contract.rent.round + contract.rental_expenses.round}€" %></p>
-        <% if contract.get_renter_avatar.attached? %>
-          <%= cl_image_tag contract.get_renter_avatar.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
+        <!-- AJOUTER LE LINK_TO -->
+        <% if contract.get_renter_avatar != [] %>
+          <% if contract.get_renter_avatar.attached? %>
+            <%= cl_image_tag contract.get_renter_avatar.key, height: 400, width: 400, :gravity=>"faces", crop: :fill %>
+          <% end %>
         <% end %>
       </div>
       <% counter += 1 %>
