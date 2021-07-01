@@ -29,9 +29,11 @@
         <th>
           <select class="select2" id="select-category" name="categories">
             <option value=all>Toutes les catégories</option>
-            <% @expenses.each do |expense| %>
-              <option value="<%= expense.category %>"> <%= expense.category %></option>
-            <% end %>
+            <option value="Charges locatives">Charges locatives</option>
+            <option value="Taxes foncières">Taxes Foncières</option>
+            <option value="Charges copropriété">Charges copropriété</option>
+            <option value="Rénovation">Rénovation</option>
+            <option value="Prêt">Prêt à la banque</option>
           </select>
         </th>
         <th>Libellés</th>

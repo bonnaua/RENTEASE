@@ -116,7 +116,6 @@ Housing.all.each do |housing|
           4 => "Thursday",
           5 => "Friday",
           6 => "Saturday"}
-
   months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'décembre']
   months_number = [1,2,3,4,5,6,7,8,9,10,11,12]
   years = [2016,2017,2018,2019]
@@ -167,6 +166,9 @@ Housing.all.each do |housing|
     created_at_modif = "#{years.sample}/09/01"
     Expense.create!(name: "Rénovation exceptionnelle ballon d'eau chaude"  , category:'Rénovation' , amount: amount_reno, housing: housing, created_at: created_at_modif, updated_at: created_at_modif)
   end
+  # PRET BANQUE
+  Expense.create!(name: "Prêt Banque biens 2016"  , category:'Prêt' , amount: amount_taxe_fonc*10, housing: housing, created_at: "2016-01-01", updated_at: "2016-01-01")
+  Expense.create!(name: "Prêt Banque biens 2017"  , category:'Prêt' , amount: amount_taxe_fonc*3, housing: housing, created_at: "2017-01-01", updated_at: "2017-01-01")
 
 end
 
