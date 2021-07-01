@@ -79,7 +79,7 @@ housing8 = Housing.create!(name:'Appartement avec balcon Paris 7ème', address:'
 housing8.photo.attach(io: URI.open('https://media.architecturaldigest.com/photos/5f11a65427ea31cb26914018/16:9/w_2560%2Cc_limit/Benoit_DSC_8758.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
 housing8.save!
 
-housing9 = Housing.create!(name:'Appartement luxueux Paris 6ème', address:'61 Rue des Saints-Pères, 75006 Paris', description:"Au coeur du 6ème arrondissement, dans un immeuble de maître, appartement rénové aux prestations expectionnelles. Matériaux et mobilier choisis avec soin. Séjour spacieux, cuisine  équipée, une suite parentale avec salle de bain et deux autres chambres. Toilettes séparées.", nb_rooms: 5, surface: 142.6, user: youri, category: 'Appartement', status: '')
+housing9 = Housing.create!(name:'Appartement luxueux Paris 6ème', address:'61 Rue des Saints-Pères, 75006 Paris', description:"Au coeur du 6ème arrondissement, dans un immeuble de maître, appartement rénové aux prestations exceptionnelles. Matériaux et mobilier choisis avec soin. Séjour spacieux, cuisine  équipée, une suite parentale avec salle de bain et deux autres chambres. Toilettes séparées.", nb_rooms: 5, surface: 142.6, user: youri, category: 'Appartement', status: '')
 housing9.photo.attach(io: URI.open('https://media.architecturaldigest.com/photos/5e6a42b25c94700009daa7d7/16:9/w_2560%2Cc_limit/AD0420_DIRAND_7.jpg'), filename: 'X.jpg', content_type: 'image/jpg')
 housing9.save!
 
@@ -449,12 +449,169 @@ end
 p "#{Rent.count} rents created"
 
 
+### DOCUMENTS ADMINISTRATIFS ###
 
+p "destroying documents"
+Document.destroy_all
+p "documents destroyed"
 
+document1 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing1.id)
+document1.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document1.save!
+document2 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing1.id)
+document2.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document2.save!
+document3 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing1.id)
+document3.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document3.save!
+document4 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing1.id)
+document4.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document4.save!
 
+document5 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing2.id)
+document5.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document5.save!
+document6 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing2.id)
+document6.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document6.save!
+document7 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing2.id)
+document7.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document7.save!
+document8 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing2.id)
+document8.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document8.save!
 
+document9 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing3.id)
+document9.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document9.save!
+document10 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing3.id)
+document10.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document10.save!
+document11 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing3.id)
+document11.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document11.save!
+document12 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing3.id)
+document12.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document12.save!
 
+document13 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing4.id)
+document13.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document13.save!
+document14 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing4.id)
+document14.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document14.save!
+document15 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing4.id)
+document15.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document15.save!
+document16 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing4.id)
+document16.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document16.save!
 
+document17 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing5.id)
+document17.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document17.save!
+document18 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing5.id)
+document18.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document18.save!
+document19 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing5.id)
+document19.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document19.save!
+document20 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing5.id)
+document20.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document20.save!
+
+document21 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing6.id)
+document21.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document21.save!
+document22 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing6.id)
+document22.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document22.save!
+document23 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing6.id)
+document23.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document23.save!
+document24 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing6.id)
+document24.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document24.save!
+
+document25 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing7.id)
+document25.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document25.save!
+document26 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing7.id)
+document26.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document26.save!
+document27 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing7.id)
+document27.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document27.save!
+document28 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing7.id)
+document28.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document28.save!
+
+document29 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing8.id)
+document29.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document29.save!
+document30 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing8.id)
+document30.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document30.save!
+document31 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing8.id)
+document31.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document31.save!
+document32 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing8.id)
+document32.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document32.save!
+
+document33 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing9.id)
+document33.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document33.save!
+document34 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing9.id)
+document34.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document34.save!
+document35 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing9.id)
+document35.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document35.save!
+document36 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing9.id)
+document36.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document36.save!
+
+document37 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing10.id)
+document37.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document37.save!
+document38 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing10.id)
+document38.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document38.save!
+document39 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing10.id)
+document39.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document39.save!
+document40 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing10.id)
+document40.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document40.save!
+
+document41 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing11.id)
+document41.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document41.save!
+document42 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing11.id)
+document42.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document42.save!
+document43 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing11.id)
+document43.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document43.save!
+document44 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing11.id)
+document44.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document44.save!
+
+document45 = Document.create!(name: "Bail sur 3 ans", category: "Contrat d'habitation", housing_id: housing12.id)
+document45.pages.attach(io: URI.open('https://www.jelouebien.com/wp-content/uploads/2018/02/Illustration_Bail_Type_Location_Vide_loi_ALUR.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document45.save!
+document46 = Document.create!(name: "Contrat d'assurance", category: "Assurance habitation", housing_id: housing12.id)
+document46.pages.attach(io: URI.open('https://www.fichier-pdf.fr/2017/08/17/attestations-d-assurance/preview-attestations-d-assurance-1.jpg'), filename: 'X.jpg', content_type: 'application/pdf')
+document46.save!
+document47 = Document.create!(name: "Dernière quittance", category: "Quittance de loyer", housing_id: housing12.id)
+document47.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document47.save!
+document48 = Document.create!(name: "Avant-dernière quittance", category: "Quittance de loyer", housing_id: housing12.id)
+document48.pages.attach(io: URI.open('https://www.captain.legal/img/quittance-de-loyer.png'), filename: 'X.jpg', content_type: 'application/pdf')
+document48.save!
+
+p "#{Document.count} documents created"
 
 
 
