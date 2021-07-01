@@ -9,7 +9,7 @@ class ExpensesController < ApplicationController
 
     @expenses = Expense.joins(:housing).where(housings: { user: current_user })
     @housings = Housing.where(user: current_user)
-    @rents = Rent.all
+    @rents = Rent.joins(:housing).where(housings: { user: current_user })
   end
 
   def show
