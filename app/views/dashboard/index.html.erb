@@ -7,7 +7,7 @@
         <h3 class="amount-card"><strong> <%=  (@profit_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= ((@profit_over_the_last_year - @profit_two_years)*100/@profit_two_years).round() %>%)</span></h3>
     </div>
     <div class="card-dashboard">
-        <h2>Mes Revenues</h2>
+        <h2>Mes Revenus</h2>
         <p>de l'année dernière</p>
         <h3 class="amount-card"><strong>+ <%=  (@rents_over_the_last_year /1000).round(1) %>k€</strong><span class='percentage'> (<%= ( @rents_two_years == 0 ) ? "-" : ((@rents_over_the_last_year - @rents_two_years)*100/@rents_two_years).round() %>%)</span></h3>
     </div>
