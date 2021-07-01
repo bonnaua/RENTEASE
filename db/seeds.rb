@@ -286,7 +286,7 @@ malo.photo.attach(io: URI.open('https://images.unsplash.com/flagged/photo-159551
 malo.save!
 
 raphaelle = Renter.create!(first_name: 'Raphaëlle', last_name: "Laumière", email:'raphaelleuh@gmail.com',phone_number:'06543668921' , description:"Chercheuse en lettres")
-raphaelle.photo.attach(io: URI.open('https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
+raphaelle.photo.attach(io: URI.open('https://images.unsplash.com/photo-1450297350677-623de575f31c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80'), filename: 'X.jpg', content_type: 'image/jpg')
 raphaelle.save!
 
 imane = Renter.create!(first_name: 'Imane', last_name: "Enami", email:'imane@gmail.com',phone_number:'0788654701' , description:"Horlogère chez Piaget")
@@ -399,25 +399,25 @@ contract25 = Contract.create!(housing: housing12, start_date: Date.new(2018,01,0
 
 contract26 = Contract.create!(housing: housing12, start_date: Date.new(2018,07,01), end_date: Date.new(2019,12,31), rent_due_date: Date.new(2018,07,01),  rent: 3100, rental_expenses: 150)
 
-renter_contract17 = RenterContract.create!(renter_id: ahmed.id, contract_id: contract16.id )
+renter_contract17 = RenterContract.create!(renter_id: ahmed.id, contract_id: contract17.id )
 
-renter_contract18 = RenterContract.create!(renter_id: federico.id, contract_id: contract17.id )
+renter_contract18 = RenterContract.create!(renter_id: federico.id, contract_id: contract18.id )
 
-renter_contract19 = RenterContract.create!(renter_id: austin.id, contract_id: contract18.id )
+renter_contract19 = RenterContract.create!(renter_id: austin.id, contract_id: contract19.id )
 
-renter_contract20 = RenterContract.create!(renter_id: nico.id, contract_id: contract19.id )
+renter_contract20 = RenterContract.create!(renter_id: nico.id, contract_id: contract20.id )
 
-renter_contract21 = RenterContract.create!(renter_id: giulia.id, contract_id: contract20.id )
+renter_contract21 = RenterContract.create!(renter_id: giulia.id, contract_id: contract21.id )
 
-renter_contract22 = RenterContract.create!(renter_id: fatima.id, contract_id: contract21.id )
+renter_contract22 = RenterContract.create!(renter_id: fatima.id, contract_id: contract22.id )
 
-renter_contract23 = RenterContract.create!(renter_id: malo.id, contract_id: contract22.id )
+renter_contract23 = RenterContract.create!(renter_id: malo.id, contract_id: contract23.id )
 
-renter_contract24 = RenterContract.create!(renter_id: raphaelle.id, contract_id: contract23.id )
+renter_contract24 = RenterContract.create!(renter_id: raphaelle.id, contract_id: contract24.id )
 
-renter_contract25 = RenterContract.create!(renter_id: imane.id, contract_id: contract24.id )
+renter_contract25 = RenterContract.create!(renter_id: imane.id, contract_id: contract25.id )
 
-renter_contract26 = RenterContract.create!(renter_id: joseph.id, contract_id: contract25.id )
+renter_contract26 = RenterContract.create!(renter_id: joseph.id, contract_id: contract26.id )
 
 
 p "#{RenterContract.count} renter_contracts created"
