@@ -11,35 +11,35 @@
     <div class="form-inputs">
       <div class="row">
         <div class= "col-half">
-          <h4>Prénom</h4>
-          <%= f.input :first_name, label: false, placeholder: "Thomas" %>
+          <h4>Prénom *</h4>
+          <%= f.input :first_name, label: false, placeholder: "Ex: Thomas" %>
         </div>
         <div class= "col-half">
           <div>
-            <h4>Nom</h4>
-          <%= f.input :last_name, label: false, placeholder: "De la Pince" %>
+            <h4>Nom *</h4>
+          <%= f.input :last_name, label: false, placeholder: "Ex: De Pince" %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class= "col-half">
-          <h4>Adresse mail</h4>
-          <%= f.input :email, label: false, placeholder: "thomas@email.com" %>
+          <h4>Adresse mail *</h4>
+          <%= f.input :email, label: false, placeholder: "Ex: thomas@email.com" %>
         </div>
         <div class= "col-half">
           <div>
           <h4>Numéro de téléphone</h4>
-          <%= f.input :phone_number, label: false, placeholder: "06 78 65 45 34" %>
+          <%= f.input :phone_number, label: false, placeholder: "Ex: 06 78 65 45 34" %>
           </div>
         </div>
       </div>
       <div class="row">
         <div class= "col-half">
           <h4>Description</h4>
-          <%= f.input :description, label: false, placeholder: "Podologue de 35 ans" %>
+          <%= f.input :description, label: false, placeholder: "Ex: Podologue de 35 ans" %>
         </div>
         <div class= "col-half">
-          <h4>Photo du locataire</h4>
+          <h4>Photo du locataire *</h4>
           <%= f.input :photo, label: false, as: :file %>
         </div>
       </div>
